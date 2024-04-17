@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace ComicBookStore
 {
-    public partial class Form1 : Form
+    public partial class FrmMenu : Form
     {
-        public Form1()
+        public FrmMenu()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
