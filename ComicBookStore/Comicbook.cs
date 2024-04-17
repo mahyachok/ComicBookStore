@@ -30,8 +30,7 @@ namespace ComicBookStore
             Reprint = reprint;
         }
 
-        public Comicbook()
-        {
-        }
+       
+
     }
 }
