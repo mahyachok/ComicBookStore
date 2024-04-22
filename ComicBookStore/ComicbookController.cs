@@ -101,6 +101,25 @@ namespace ComicBookStore
             database.DatabaseInsert(sql);
         }
 
+        public void modifyComicBook(string upc, string seriesTitle, int issueNumber, string coverImage, string author, string illustrator, double price, bool variantCover, bool reprint)
+        {
+            string sql = "UPDATE ComicCollection SET Title = @seriesTitle, IssueNo = @issueNumber, CoverImage = @coverImage, Author = @author, Illustrator = @illustrator, Price = @price, VariantCover = @variantCover, Reprint = @reprint WHERE UPC = @upc";
+
+            Database database = new Database();
+
+            database.DatabaseInsert(sql);
+        }
+
+        public void modifyCustomer(string username, string password, string name)
+        {
+            string sql = "UPDATE CustomerCollection SET Password = @password, Name = @name WHERE Username = @username";
+
+            Database database = new Database();
+
+            database.DatabaseInsert(sql);
+        }
+
+
       
 
 
