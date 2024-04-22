@@ -83,7 +83,7 @@ namespace ComicBookStore
         }
 
 
-        public void deleteComicBook(string upc)
+        public void DeleteComicBook(string upc)
         {
             string sql = "DELETE FROM ComicCollection WHERE UPC = @upc";
 
@@ -92,7 +92,7 @@ namespace ComicBookStore
             database.DatabaseInsert(sql);
         }
 
-        public void deleteCustomer(string username)
+        public void DeleteCustomer(string username)
         {
             string sql = "DELETE FROM CustomerCollection WHERE Username = @username";
 
@@ -101,7 +101,7 @@ namespace ComicBookStore
             database.DatabaseInsert(sql);
         }
 
-        public void modifyComicBook(string upc, string seriesTitle, int issueNumber, string coverImage, string author, string illustrator, double price, bool variantCover, bool reprint)
+        public void ModifyComicBook(string upc, string seriesTitle, int issueNumber, string coverImage, string author, string illustrator, double price, bool variantCover, bool reprint)
         {
             string sql = "UPDATE ComicCollection SET Title = @seriesTitle, IssueNo = @issueNumber, CoverImage = @coverImage, Author = @author, Illustrator = @illustrator, Price = @price, VariantCover = @variantCover, Reprint = @reprint WHERE UPC = @upc";
 
@@ -110,7 +110,7 @@ namespace ComicBookStore
             database.DatabaseInsert(sql);
         }
 
-        public void modifyCustomer(string username, string password, string name)
+        public void ModifyCustomer(string username, string password, string name)
         {
             string sql = "UPDATE CustomerCollection SET Password = @password, Name = @name WHERE Username = @username";
 

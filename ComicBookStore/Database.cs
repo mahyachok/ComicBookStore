@@ -55,6 +55,8 @@ fields: EmployeeUsername, EmployeePassword
 
 Fifth Table
 
+StoreCollection
+
 fields: StoreID, ComicUPC, Quantity
 
  
