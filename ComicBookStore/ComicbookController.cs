@@ -64,7 +64,7 @@ namespace ComicBookStore
         
         public void AddCustomer(Customer newCustomer)
         {
-            string sql = "INSERT INTO Customer (Username, Password, Name) VALUES ('" + newCustomer.Username + "', '" + newCustomer.Password + "', '" + newCustomer.Name + "')";
+            string sql = "INSERT INTO CustomerCollection (Username, Password, Name) VALUES ('" + newCustomer.Username + "', '" + newCustomer.Password + "', '" + newCustomer.Name + "')";
 
             Database database = new Database();
 
@@ -80,6 +80,25 @@ namespace ComicBookStore
             //Database database = new Database();
 
             //database.DatabaseInsert(sql);
+        }
+
+
+        public void deleteComicBook(string upc)
+        {
+            string sql = "DELETE FROM ComicCollection WHERE UPC = @upc";
+
+            Database database = new Database();
+
+            database.DatabaseInsert(sql);
+        }
+
+        public void deleteCustomer(string username)
+        {
+            string sql = "DELETE FROM CustomerCollection WHERE Username = @username";
+
+            Database database = new Database();
+
+            database.DatabaseInsert(sql);
         }
 
       

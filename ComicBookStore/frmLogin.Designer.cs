@@ -68,6 +68,7 @@
             this.btnCustLogin.TabIndex = 2;
             this.btnCustLogin.Text = "Login";
             this.btnCustLogin.UseVisualStyleBackColor = true;
+            this.btnCustLogin.Click += new System.EventHandler(this.btnCustLogin_Click);
             // 
             // lblPass
             // 
@@ -123,6 +124,7 @@
             this.btnEmpLogin.TabIndex = 2;
             this.btnEmpLogin.Text = "Login";
             this.btnEmpLogin.UseVisualStyleBackColor = true;
+            this.btnEmpLogin.Click += new System.EventHandler(this.btnEmpLogin_Click);
             // 
             // label2
             // 
@@ -185,6 +187,7 @@
             this.Controls.Add(this.grpCust);
             this.Name = "frmLogin";
             this.Text = "frmLogin";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.grpCust.ResumeLayout(false);
             this.grpCust.PerformLayout();
             this.grpEmp.ResumeLayout(false);
