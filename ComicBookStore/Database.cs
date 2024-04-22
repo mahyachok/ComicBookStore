@@ -10,14 +10,15 @@ using System.Windows.Forms;
 
 
 /*
- Databasse contant 
+ Database contant 
 
-database name : ComicBookDatabase
+database name : ComicBookStore.accdb
 
 
 first
-table name : ComicBook
-fields : SeriesTitle, IssueNumber, CoverImage, Author, Illustrator, Price, VarientCover, Reprint, 
+table name : ComicCollection
+
+fields : UPC, Title, IssueNo, Author, Illustrator, Price, VariantCover, Reprint, 
 
 
 
@@ -26,9 +27,35 @@ fields : SeriesTitle, IssueNumber, CoverImage, Author, Illustrator, Price, Varie
 
 second table
 
-table: Store
 
-fields: StoreName, StoreLocation, StoreInventory
+CustomerCollection
+
+fields: CustomerID, ComicUPC,Quantity
+
+
+Third table 
+
+CustomerLogin
+
+fields: CustomerUsername, CustomerPassword
+
+
+fourth table
+
+EmployeeLogin
+
+fields: EmployeeUsername, EmployeePassword
+
+
+
+
+
+
+
+
+Fifth Table
+
+fields: StoreID, ComicUPC, Quantity
 
  
  
@@ -68,14 +95,14 @@ namespace ComicBookStore
 
 
         string queryString;
-        string connectString = "provider=Microsoft.ACE.OLEDB.12.0; Data Source=../../ComicbookDatabase.accdb;";
+        string connectString = "provider=Microsoft.ACE.OLEDB.12.0; Data Source=../../ComicBookStore.accdb;";
 
 
 
 
-        public   DataTable GetDatabaseInfo(string strSQL = "SELECT * FROM ComicBook")
+        public   DataTable GetDatabaseInfo(string strSQL = "SELECT * FROM ComicCollection")
         {
-            myConnection = new OleDbConnection("provider=Microsoft.ACE.OLEDB.12.0;Data Source=ComicbookDatabase.accdb;");
+            myConnection = new OleDbConnection("provider=Microsoft.ACE.OLEDB.12.0;Data Source=ComicBookStore.accdb;");
             
 
             myDataAdapter = new OleDbDataAdapter(strSQL, myConnection);
