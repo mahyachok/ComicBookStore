@@ -47,13 +47,39 @@ namespace ComicBookStore
             return newComicBook;
         }
 
+
+        //the sql string doesnt match the database need to add CoverImage cell to the database
         public void AddComicBook(Comicbook newComicBook)
         {
-          string sql = "INSERT INTO ComicCollection (Title, UPC, IssueNo, Author, Illustrator, Price, VariantCover, Reprint) VALUES ('" + newComicBook.SeriesTitle + "', '" + newComicBook.UPC + "', " + newComicBook.IssueNumber + ", '" + newComicBook.Author + "', '" + newComicBook.Illustrator + "', " + newComicBook.Price + ", " + newComicBook.VariantCover + ", " + newComicBook.Reprint + ")";
+          string sql = "INSERT INTO ComicCollection (Title, UPC, IssueNo,CoverImage, Author, Illustrator, Price, VariantCover, Reprint) VALUES ('" + newComicBook.SeriesTitle + "', '" + newComicBook.UPC + "', " + newComicBook.IssueNumber + ", '" + newComicBook.CoverImage +", '" + newComicBook.Author + "', '" + newComicBook.Illustrator + "', " + newComicBook.Price + ", " + newComicBook.VariantCover + ", " + newComicBook.Reprint + ")";
 
             Database database = new Database();
 
             database.DatabaseInsert(sql);
+        }
+
+
+
+        //the sql string doesnt match the database
+        
+        public void AddCustomer(Customer newCustomer)
+        {
+            string sql = "INSERT INTO Customer (Username, Password, Name) VALUES ('" + newCustomer.Username + "', '" + newCustomer.Password + "', '" + newCustomer.Name + "')";
+
+            Database database = new Database();
+
+            database.DatabaseInsert(sql);
+        }
+
+
+        //might delete this also the sql string doesnt match the database
+        public void AddEmployee(Employee newEmployee)
+        {
+            //string sql = "INSERT INTO Employee (Username, Password, Name, Salary, StoreName, Address) VALUES ('" + newEmployee.Username + "', '" + newEmployee.Password + "', '" + newEmployee.Name + "', " + newEmployee.Salary + ", '" + newEmployee.StoreName + "', '" + newEmployee.Address + "')";
+
+            //Database database = new Database();
+
+            //database.DatabaseInsert(sql);
         }
 
       
