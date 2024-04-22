@@ -21,5 +21,17 @@ namespace ComicBookStore
         {
             myConnection = new OleDbConnection("provider=Microsoft.ACE.OLEDB.12.0;Data Source=ComicBookStore.accdb;");
         }
+
+        public Customer MakeCustomer(string username, string password, string name)
+        {
+            Customer newCustomer = new Customer(username, password, name);
+            return newCustomer;
+        }
+
+        public Employee MakeEmployee(string username, string password, string name, double salary, string storeName, string address)
+        {
+            Employee newEmployee = new Employee(username, password, name, salary, storeName, address);
+            return newEmployee;
+        }
     }
 }

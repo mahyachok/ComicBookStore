@@ -51,6 +51,12 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="frmCustRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustRegister.Designer.cs">
+      <DependentUpon>frmCustRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCustRegister.resx">
+      <DependentUpon>frmCustRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
