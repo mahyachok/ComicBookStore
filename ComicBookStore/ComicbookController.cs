@@ -15,11 +15,19 @@ namespace ComicBookStore
         OleDbDataAdapter myDataAdapter;
         DataSet myDataSet;
         string strSQL;
+        private Database comicDatabase;
 
 
         public ComicbookController()
         {
             myConnection = new OleDbConnection("provider=Microsoft.ACE.OLEDB.12.0;Data Source=ComicBookStore.accdb;");
+            comicDatabase = new Database();
+        }
+
+        public DataTable DisplayComics()
+        {
+            strSQL = "SELECT * FROM ComicCollection";
+            return comicDatabase.GetDatabaseInfo(strSQL);
         }
 
         public Customer MakeCustomer(string username, string password, string name)
@@ -32,6 +40,19 @@ namespace ComicBookStore
         {
             Employee newEmployee = new Employee(username, password, name, salary, storeName, address);
             return newEmployee;
+        }
+
+
+        public void AddCustomerToDatabase(Customer newCustomer)
+        {
+            strSQL = $"INSERT INTO CustomersLogin (CustomerUsername, CustomerPassword) VALUES ('{newCustomer.Username}', {newCustomer.Password})";
+            comicDatabase.DatabaseInsert(strSQL);
+        }
+
+        public void AddEmployeeToDatabase(Employee newEmployee)
+        {
+            strSQL = $"INSERT INTO EmployeeLogin (EmployeeUsername, EmployeePassword) VALUES ('{newEmployee.Username}', {newEmployee.Password})";
+            comicDatabase.DatabaseInsert(strSQL);
         }
     }
 }
