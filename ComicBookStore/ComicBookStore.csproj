@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comicbook.cs" />
+    <Compile Include="ComicbookController.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Employee.cs" />
@@ -62,6 +63,12 @@
     <Compile Include="frmComicEntry.Designer.cs">
       <DependentUpon>frmComicEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -69,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmComicEntry.resx">
       <DependentUpon>frmComicEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
