@@ -20,6 +20,11 @@ namespace ComicBookStore
         public ComicbookController()
         {
             myConnection = new OleDbConnection("provider=Microsoft.ACE.OLEDB.12.0;Data Source=ComicBookStore.accdb;");
+
+            strSQL = "SELECT * FROM ComicCollection";
+            myDataAdapter = new OleDbDataAdapter(strSQL, myConnection);
+            myDataSet = new DataSet("ComicTable");
+            myDataAdapter.Fill(myDataSet, "ComicCollection");
         }
 
         public Customer MakeCustomer(string username, string password, string name)
@@ -33,5 +38,28 @@ namespace ComicBookStore
             Employee newEmployee = new Employee(username, password, name, salary, storeName, address);
             return newEmployee;
         }
+
+
+
+       public Comicbook MakeComicBook(string seriesTitle, string upc, int issueNumber, string coverImage, string author, string illustrator, double price, bool variantCover, bool reprint)
+        {
+            Comicbook newComicBook = new Comicbook(seriesTitle, upc, issueNumber, coverImage, author, illustrator, price, variantCover, reprint);
+            return newComicBook;
+        }
+
+        public void AddComicBook(Comicbook newComicBook)
+        {
+          string sql = "INSERT INTO ComicCollection (Title, UPC, IssueNo, Author, Illustrator, Price, VariantCover, Reprint) VALUES ('" + newComicBook.SeriesTitle + "', '" + newComicBook.UPC + "', " + newComicBook.IssueNumber + ", '" + newComicBook.Author + "', '" + newComicBook.Illustrator + "', " + newComicBook.Price + ", " + newComicBook.VariantCover + ", " + newComicBook.Reprint + ")";
+
+            Database database = new Database();
+
+            database.DatabaseInsert(sql);
+        }
+
+      
+
+
+
+
     }
 }

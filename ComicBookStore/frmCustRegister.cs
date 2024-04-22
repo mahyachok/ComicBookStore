@@ -24,5 +24,10 @@ namespace ComicBookStore
         {
             controller.MakeCustomer(txtUser.Text, txtPass.Text, txtName.Text);
         }
+
+        private void frmCustRegister_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
