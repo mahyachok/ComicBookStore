@@ -83,10 +83,19 @@
             // cmbPrice
             // 
             this.cmbPrice.FormattingEnabled = true;
+            this.cmbPrice.Items.AddRange(new object[] {
+            "1.50",
+            "2.00",
+            "3.50",
+            "5.00",
+            "10.00",
+            "15.00",
+            "30.00"});
             this.cmbPrice.Location = new System.Drawing.Point(92, 174);
             this.cmbPrice.Name = "cmbPrice";
             this.cmbPrice.Size = new System.Drawing.Size(100, 21);
             this.cmbPrice.TabIndex = 5;
+            this.cmbPrice.SelectedIndexChanged += new System.EventHandler(this.cmbPrice_SelectedIndexChanged);
             // 
             // chkVariant
             // 
@@ -170,6 +179,7 @@
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "Add to Stock";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // frmComicEntry
             // 
@@ -193,6 +203,7 @@
             this.Controls.Add(this.txtTitle);
             this.Name = "frmComicEntry";
             this.Text = "frmComicEntry";
+            this.Load += new System.EventHandler(this.frmComicEntry_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

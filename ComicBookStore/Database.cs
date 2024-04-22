@@ -18,7 +18,7 @@ database name : ComicBookStore.accdb
 first
 table name : ComicCollection
 
-fields : UPC, Title, IssueNo, Author, Illustrator, Price, VariantCover, Reprint, 
+fields : UPC, Title, IssueNo, Author, Illustrator, Price, VariantCover, Reprint
 
 
 

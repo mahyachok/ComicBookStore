@@ -38,6 +38,8 @@ namespace ComicBookStore
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            frmLogin frm = new frmLogin();
+            frm.Show();
 
         }
 
