@@ -27,47 +27,38 @@ namespace ComicBookStore
 
         private void frmComicDisplay_Load(object sender, EventArgs e)
         {
-
             DataTable dataTable = controller.DisplayComics();
 
             foreach (DataRow row in dataTable.Rows)
             {
                 UserControl comicItem = new UserControl();
-                comicItem.Dock = DockStyle.Top;
+                comicItem.Padding = new Padding(5); 
+                comicItem.Width = flowLayoutPanel.ClientSize.Width - 30; 
 
-                Label upcLabel = new Label();
-                upcLabel.Text = "UPC: " + row["UPC"].ToString();
-                upcLabel.AutoSize = true;
+                TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+                tableLayoutPanel.Dock = DockStyle.Fill;
+                tableLayoutPanel.AutoSize = true;
+                tableLayoutPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
 
-                Label titleLabel = new Label();
-                titleLabel.Text = "Title: " + row["Title"].ToString();
-                titleLabel.AutoSize = true;
+                tableLayoutPanel.Controls.Add(CreateLabel("UPC: " + row["UPC"].ToString()));
+                tableLayoutPanel.Controls.Add(CreateLabel("Title: " + row["Title"].ToString()));
+                tableLayoutPanel.Controls.Add(CreateLabel("Issue No: " + row["IssueNo"].ToString()));
+                tableLayoutPanel.Controls.Add(CreateLabel("Author: " + row["Author"].ToString()));
+                tableLayoutPanel.Controls.Add(CreateLabel("Illustrator: " + row["Illustrator"].ToString()));
+                tableLayoutPanel.Controls.Add(CreateLabel("Price: " + row["Price"].ToString()));
 
-                Label authorLabel = new Label();
-                authorLabel.Text = "Author: " + row["Author"].ToString();
-                authorLabel.AutoSize = true;
-
-                Label issueLabel = new Label();
-                issueLabel.Text = "Author: " + row["Author"].ToString();
-                issueLabel.AutoSize = true;
-
-                Label illustLabel = new Label();
-                illustLabel.Text = "Illustrator: " + row["Illustrator"].ToString();
-                illustLabel.AutoSize = true;
-
-                Label priceLabel = new Label();
-                priceLabel.Text = "Price: " + row["Price"].ToString();
-                priceLabel.AutoSize = true;
-
-                comicItem.Controls.Add(upcLabel);
-                comicItem.Controls.Add(titleLabel);
-                comicItem.Controls.Add(issueLabel);
-                comicItem.Controls.Add(authorLabel);
-                comicItem.Controls.Add(illustLabel);
-                comicItem.Controls.Add(priceLabel);
+                comicItem.Controls.Add(tableLayoutPanel);
 
                 flowLayoutPanel.Controls.Add(comicItem);
             }
+        }
+
+        private Label CreateLabel(string text)
+        {
+            Label label = new Label();
+            label.Text = text;
+            label.AutoSize = true;
+            return label;
         }
     }
 }

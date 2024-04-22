@@ -164,6 +164,7 @@
             this.btnCreateCust.TabIndex = 2;
             this.btnCreateCust.Text = "Create a New Account (Customer)";
             this.btnCreateCust.UseVisualStyleBackColor = true;
+            this.btnCreateCust.Click += new System.EventHandler(this.btnCreateCust_Click);
             // 
             // btnCreateEmp
             // 

@@ -16,5 +16,11 @@ namespace ComicBookStore
         {
             InitializeComponent();
         }
+
+        private void btnCreateCust_Click(object sender, EventArgs e)
+        {
+            frmCustRegister customerRegistration = new frmCustRegister();
+            customerRegistration.ShowDialog();
+        }
     }
 }

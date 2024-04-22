@@ -17,10 +17,7 @@ namespace ComicBookStore
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void FrmMenu_Load(object sender, EventArgs e)
         {
@@ -51,6 +48,12 @@ namespace ComicBookStore
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            frmComicDisplay displayForm = new frmComicDisplay();
+            displayForm.Show();
         }
     }
 }
