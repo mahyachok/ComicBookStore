@@ -26,5 +26,29 @@ namespace ComicBookStore
         {
 
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+            frmComicEntry frm = new frmComicEntry();
+            frm.Show();
+
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
