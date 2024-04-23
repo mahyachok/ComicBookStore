@@ -54,5 +54,15 @@ namespace ComicBookStore
             strSQL = $"INSERT INTO EmployeeLogin (EmployeeUsername, EmployeePassword) VALUES ('{newEmployee.Username}', {newEmployee.Password})";
             comicDatabase.DatabaseInsert(strSQL);
         }
+
+        public void DeleteCustomerFromDatabase(Customer customer)
+        {
+
+        }
+
+        public void DeleteEmployeeFromDatabase(Employee employee)
+        {
+
+        }
     }
 }
