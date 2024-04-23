@@ -74,6 +74,12 @@ namespace ComicBookStore
             comicDatabase.DatabaseInsert(strSQL);
         }
 
+        public void DeleteEmployee(Employee employee)
+        {
+            strSQL = $"DELETE FROM EmployeeLogin " + $"WHERE Username = '{employee.Username}'";
+            comicDatabase.DatabaseInsert(strSQL);
+        }
+
         public void ModifyComicBook(Comicbook comicbook)
         {
             string strSQL = $"UPDATE ComicCollection SET " +
@@ -92,10 +98,20 @@ namespace ComicBookStore
 
         public void ModifyCustomer(Customer customer)
         {
-            string strSQL = $"UPDATE CustomerCollection SET " +
+            string strSQL = $"UPDATE CustomersLogin SET " +
                             $"Password = '{customer.Password}', " +
                             $"Name = '{customer.Name}' " +
                             $"WHERE Username = '{customer.Username}'";
+
+            comicDatabase.DatabaseInsert(strSQL);
+        }
+
+        public void ModifyEmployee(Employee employee)
+        {
+            string strSQL = $"UPDATE EmployeeLogin SET " +
+                            $"Password = '{employee.Password}', " +
+                            $"Name = '{employee.Name}', " +
+                            $"WHERE Username = '{employee.Username}'";
 
             comicDatabase.DatabaseInsert(strSQL);
         }
