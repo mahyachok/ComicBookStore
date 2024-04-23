@@ -116,5 +116,13 @@ namespace ComicBookStore
             comicDatabase.DatabaseInsert(strSQL);
         }
 
+        public bool ValidateCustomerLogin(string username, string password)
+        {
+            string strSQL = $"SELECT COUNT(*) FROM CustomersLogin WHERE CustomerUsername = '{username}' AND CustomerPassword = '{password}'";
+
+            int count = (int)comicDatabase.ExecuteScalar(strSQL);
+
+            return count > 0;
+        }
     }
 }

@@ -140,11 +140,21 @@ namespace ComicBookStore
         }
 
 
-       
+        public object ExecuteScalar(string queryString)
+        {
+            using (OleDbConnection connection = new OleDbConnection(connectString))
+            {
+                using (OleDbCommand command = new OleDbCommand(queryString, connection))
+                {
+                    connection.Open();
+                    return command.ExecuteScalar();
+                }
+            }
+        }
 
 
 
-       
+
 
     }
 }

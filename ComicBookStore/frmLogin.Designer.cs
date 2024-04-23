@@ -68,6 +68,7 @@
             this.btnCustLogin.TabIndex = 2;
             this.btnCustLogin.Text = "Login";
             this.btnCustLogin.UseVisualStyleBackColor = true;
+            this.btnCustLogin.Click += new System.EventHandler(this.btnCustLogin_Click);
             // 
             // lblPass
             // 
