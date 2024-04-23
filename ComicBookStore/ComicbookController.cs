@@ -55,14 +55,34 @@ namespace ComicBookStore
             comicDatabase.DatabaseInsert(strSQL);
         }
 
-        public void DeleteCustomerFromDatabase(Customer customer)
-        {
-
-        }
-
         public void DeleteEmployeeFromDatabase(Employee employee)
         {
+            strSQL = "DELETE FROM CustomerCollection WHERE Username = @username";
+            comicDatabase.DatabaseInsert(strSQL);
+        }
 
+        public void DeleteComicFromDatabase(Comicbook comicbook)
+        {
+            strSQL = "DELETE FROM ComicCollection WHERE UPC = @upc";
+            comicDatabase.DatabaseInsert(strSQL);
+        }
+
+        public void DeleteCustomer(string username)
+        {
+            strSQL = "DELETE FROM CustomerCollection WHERE Username = @username";
+            comicDatabase.DatabaseInsert(strSQL);
+        }
+
+        public void ModifyComicBook(string upc, string seriesTitle, int issueNumber, string coverImage, string author, string illustrator, double price, bool variantCover, bool reprint)
+        {
+            strSQL = "UPDATE ComicCollection SET Title = @seriesTitle, IssueNo = @issueNumber, CoverImage = @coverImage, Author = @author, Illustrator = @illustrator, Price = @price, VariantCover = @variantCover, Reprint = @reprint WHERE UPC = @upc";
+            comicDatabase.DatabaseInsert(strSQL);
+        }
+
+        public void ModifyCustomer(string username, string password, string name)
+        {
+            strSQL = "UPDATE CustomerCollection SET Password = @password, Name = @name WHERE Username = @username";
+            comicDatabase.DatabaseInsert(strSQL);
         }
     }
 }
