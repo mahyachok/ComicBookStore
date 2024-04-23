@@ -175,6 +175,7 @@
             this.btnCreateEmp.TabIndex = 2;
             this.btnCreateEmp.Text = "Create a New Account (Employee)";
             this.btnCreateEmp.UseVisualStyleBackColor = true;
+            this.btnCreateEmp.Click += new System.EventHandler(this.btnCreateEmp_Click);
             // 
             // frmLogin
             // 

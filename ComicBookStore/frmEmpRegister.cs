@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace ComicBookStore
 {
-    public partial class frmCustRegister : Form
+    public partial class frmEmpRegister : Form
     {
 
-        private ComicbookController controller; 
-        public frmCustRegister()
+        private ComicbookController controller;
+        
+        public frmEmpRegister()
         {
             InitializeComponent();
             controller = new ComicbookController();
@@ -22,8 +23,9 @@ namespace ComicBookStore
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            Customer newCustomer = controller.MakeCustomer(txtUser.Text, txtPass.Text, txtName.Text);
-            controller.AddCustomerToDatabase(newCustomer);
+            Employee newEmployee = controller.MakeEmployee(txtUser.Text, txtPass.Text, txtName.Text, double.Parse(txtSalary.Text) ,txtStore.Text,txtAddress.Text);
+            controller.AddEmployeeToDatabase(newEmployee);
         }
+
     }
 }

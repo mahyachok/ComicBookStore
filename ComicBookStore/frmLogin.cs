@@ -17,7 +17,7 @@ namespace ComicBookStore
         public frmLogin()
         {
             InitializeComponent();
-            ComicbookController controller = new ComicbookController();
+            controller = new ComicbookController();
         }
 
         private void btnCreateCust_Click(object sender, EventArgs e)
@@ -37,6 +37,12 @@ namespace ComicBookStore
                 MessageBox.Show("Invalid customer login.");
             }
             ;
+        }
+
+        private void btnCreateEmp_Click(object sender, EventArgs e)
+        {
+            frmEmpRegister employeeRegistration = new frmEmpRegister();
+            employeeRegistration.ShowDialog();
         }
     }
 }

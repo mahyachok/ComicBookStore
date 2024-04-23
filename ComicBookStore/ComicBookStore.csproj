@@ -53,6 +53,12 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="frmEmpRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpRegister.Designer.cs">
+      <DependentUpon>frmEmpRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmComicDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustRegister.resx">
       <DependentUpon>frmCustRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpRegister.resx">
+      <DependentUpon>frmEmpRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
