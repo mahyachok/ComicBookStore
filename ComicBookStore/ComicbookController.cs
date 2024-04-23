@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -57,32 +58,47 @@ namespace ComicBookStore
 
         public void DeleteEmployeeFromDatabase(Employee employee)
         {
-            strSQL = "DELETE FROM CustomerCollection WHERE Username = @username";
+            strSQL = $"DELETE FROM CustomerCollection "+ $"WHERE Username = '{employee.Username}'";
             comicDatabase.DatabaseInsert(strSQL);
         }
 
         public void DeleteComicFromDatabase(Comicbook comicbook)
         {
-            strSQL = "DELETE FROM ComicCollection WHERE UPC = @upc";
+            strSQL = $"DELETE FROM ComicCollection " + $"WHERE UPC = '{comicbook.UPC}'";
             comicDatabase.DatabaseInsert(strSQL);
         }
 
-        public void DeleteCustomer(string username)
+        public void DeleteCustomer(Customer customer)
         {
-            strSQL = "DELETE FROM CustomerCollection WHERE Username = @username";
+            strSQL = $"DELETE FROM CustomerCollection " + $"WHERE Username = '{customer.Username}'";
             comicDatabase.DatabaseInsert(strSQL);
         }
 
-        public void ModifyComicBook(string upc, string seriesTitle, int issueNumber, string coverImage, string author, string illustrator, double price, bool variantCover, bool reprint)
+        public void ModifyComicBook(Comicbook comicbook)
         {
-            strSQL = "UPDATE ComicCollection SET Title = @seriesTitle, IssueNo = @issueNumber, CoverImage = @coverImage, Author = @author, Illustrator = @illustrator, Price = @price, VariantCover = @variantCover, Reprint = @reprint WHERE UPC = @upc";
+            string strSQL = $"UPDATE ComicCollection SET " +
+                    $"Title = '{comicbook.SeriesTitle}', " +
+                    $"IssueNo = {comicbook.IssueNumber}, " +
+                    $"CoverImage = '{comicbook.CoverImage}', " +
+                    $"Author = '{comicbook.Author}', " +
+                    $"Illustrator = '{comicbook.Illustrator}', " +
+                    $"Price = {comicbook.Price}, " +
+                    $"VariantCover = {comicbook.VariantCover}, " +
+                    $"Reprint = {comicbook.Reprint} " +
+                    $"WHERE UPC = '{comicbook.UPC}'";
+
             comicDatabase.DatabaseInsert(strSQL);
         }
 
-        public void ModifyCustomer(string username, string password, string name)
+        public void ModifyCustomer(Customer customer)
         {
-            strSQL = "UPDATE CustomerCollection SET Password = @password, Name = @name WHERE Username = @username";
+            string strSQL = $"UPDATE CustomerCollection SET " +
+                            $"Password = '{customer.Password}', " +
+                            $"Name = '{customer.Name}' " +
+                            $"WHERE Username = '{customer.Username}'";
+
             comicDatabase.DatabaseInsert(strSQL);
         }
+
     }
 }
