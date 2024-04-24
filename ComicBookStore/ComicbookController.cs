@@ -25,9 +25,9 @@ namespace ComicBookStore
             comicDatabase = new Database();
         }
 
-        public DataTable DisplayComics()
+        public DataTable DisplayComics(string strSQL = "SELECT * FROM ComicCollection")
         {
-            strSQL = "SELECT * FROM ComicCollection";
+            
             return comicDatabase.GetDatabaseInfo(strSQL);
         }
 
