@@ -124,5 +124,14 @@ namespace ComicBookStore
 
             return count > 0;
         }
+
+        public bool ValidateEmployeeLogin(string username, string password)
+        {
+            string strSQL = $"SELECT COUNT(*) FROM EmployeeLogin WHERE EmployeeUsername = '{username}' AND EmployeePassword = '{password}'";
+
+            int count = (int)comicDatabase.ExecuteScalar(strSQL);
+
+            return count > 0;
+        }
     }
 }
