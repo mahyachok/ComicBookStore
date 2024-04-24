@@ -16,5 +16,20 @@ namespace ComicBookStore
         {
             InitializeComponent();
         }
+
+        private void btnViewCollection_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSellComics_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddComics_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

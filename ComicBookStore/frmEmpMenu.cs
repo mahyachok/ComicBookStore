@@ -16,5 +16,19 @@ namespace ComicBookStore
         {
             InitializeComponent();
         }
+
+        private void btnModifyComics_Click(object sender, EventArgs e)
+        {
+           // frmModifyComics modifyComics = new frmModifyComics();
+          //  modifyComics.ShowDialog();
+
+        }
+
+        private void btnEnterComics_Click(object sender, EventArgs e)
+        {
+            frmComicEntry comicEntry = new frmComicEntry();
+            comicEntry.ShowDialog();
+
+        }
     }
 }
