@@ -25,5 +25,10 @@ namespace ComicBookStore
             Customer newCustomer = controller.MakeCustomer(txtUser.Text, txtPass.Text, txtName.Text);
             controller.AddCustomerToDatabase(newCustomer);
         }
+
+        private void frmCustRegister_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
