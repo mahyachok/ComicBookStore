@@ -51,6 +51,33 @@ namespace ComicBookStore
             }
 
 
+            //validation
+
+            if (txtUPC.Text == ""|| txtTitle.Text == "" || txtIssue.Text == "" || txtCoverImage.Text == "" || txtAuthor.Text == "" || txtArtist.Text == "" || cmbPrice.Text == "")
+            {
+                MessageBox.Show("Please fill in all fields");
+                return;
+            }
+
+            if (int.Parse(txtIssue.Text) < 1)
+            {
+                MessageBox.Show("Issue number must be greater than 0");
+                return;
+            }
+
+            if(int.TryParse(txtIssue.Text, out int result) == false)
+            {
+                MessageBox.Show("Issue number must be a number");
+                return;
+            }
+
+
+
+
+
+
+
+
             controller.AddComicToDatabase(controller.MakeComicbook(txtUPC.Text, txtTitle.Text, int.Parse(txtIssue.Text), txtCoverImage.Text, txtAuthor.Text, txtArtist.Text, int.Parse(cmbPrice.Text), variant, reprint));
 
 
