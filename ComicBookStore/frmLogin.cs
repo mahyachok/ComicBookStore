@@ -30,8 +30,8 @@ namespace ComicBookStore
         {
             if(controller.ValidateCustomerLogin(txtCustUser.Text, txtCustPass.Text))
             {
-                //frmCustMenu customerMenu = new frmCustMenu();
-                //customerMenu.ShowDialog();
+                frmCustMenu customerMenu = new frmCustMenu();
+                customerMenu.ShowDialog();
 
             }
             else
@@ -54,8 +54,8 @@ namespace ComicBookStore
 
             if (controller.ValidateEmployeeLogin(txtEmpUser.Text, txtEmpPass.Text))
             {
-                //frmEmpMenu employeeMenu = new frmEmpMenu();
-                //employeeMenu.ShowDialog();
+                frmEmpMenu employeeMenu = new frmEmpMenu();
+                employeeMenu.ShowDialog();
             }
             else
             {

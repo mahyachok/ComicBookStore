@@ -53,6 +53,18 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="frmCustMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustMenu.Designer.cs">
+      <DependentUpon>frmCustMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmpMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpMenu.Designer.cs">
+      <DependentUpon>frmEmpMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmpRegister.cs">
       <SubType>Form</SubType>
     </Compile>
