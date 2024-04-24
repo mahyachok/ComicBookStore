@@ -43,6 +43,20 @@ namespace ComicBookStore
             return newEmployee;
         }
 
+        public Comicbook MakeComicbook(string UPC, string seriesTitle, int issueNumber, string coverImage, string author, string illustrator, double price, bool variantCover, bool reprint)
+        {
+            Comicbook newComicbook = new Comicbook(UPC, seriesTitle, issueNumber, coverImage, author, illustrator, price, variantCover, reprint);
+            return newComicbook;
+        }
+
+        public void AddComicToDatabase(Comicbook newComicbook)
+        {
+            strSQL = $"INSERT INTO ComicCollection (UPC, Title, IssueNo, CoverImage, Author, Illustrator, Price, VariantCover, Reprint) VALUES ('{newComicbook.UPC}', '{newComicbook.SeriesTitle}', {newComicbook.IssueNumber}, '{newComicbook.CoverImage}', '{newComicbook.Author}', '{newComicbook.Illustrator}', {newComicbook.Price}, {newComicbook.VariantCover}, {newComicbook.Reprint})";
+            comicDatabase.DatabaseInsert(strSQL);
+        }
+
+
+
 
         public void AddCustomerToDatabase(Customer newCustomer)
         {

@@ -43,6 +43,8 @@
             this.lblIllustrator = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.lblUrl = new System.Windows.Forms.Label();
+            this.txtCoverImage = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtTitle
@@ -100,7 +102,7 @@
             // chkVariant
             // 
             this.chkVariant.AutoSize = true;
-            this.chkVariant.Location = new System.Drawing.Point(92, 213);
+            this.chkVariant.Location = new System.Drawing.Point(92, 227);
             this.chkVariant.Name = "chkVariant";
             this.chkVariant.Size = new System.Drawing.Size(90, 17);
             this.chkVariant.TabIndex = 6;
@@ -110,7 +112,7 @@
             // chkReprint
             // 
             this.chkReprint.AutoSize = true;
-            this.chkReprint.Location = new System.Drawing.Point(92, 236);
+            this.chkReprint.Location = new System.Drawing.Point(92, 250);
             this.chkReprint.Name = "chkReprint";
             this.chkReprint.Size = new System.Drawing.Size(60, 17);
             this.chkReprint.TabIndex = 7;
@@ -173,7 +175,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(92, 259);
+            this.btnAdd.Location = new System.Drawing.Point(92, 273);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(109, 23);
             this.btnAdd.TabIndex = 13;
@@ -181,11 +183,29 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // lblUrl
+            // 
+            this.lblUrl.AutoSize = true;
+            this.lblUrl.Location = new System.Drawing.Point(13, 201);
+            this.lblUrl.Name = "lblUrl";
+            this.lblUrl.Size = new System.Drawing.Size(64, 13);
+            this.lblUrl.TabIndex = 14;
+            this.lblUrl.Text = "Image URL:";
+            // 
+            // txtCoverImage
+            // 
+            this.txtCoverImage.Location = new System.Drawing.Point(92, 201);
+            this.txtCoverImage.Name = "txtCoverImage";
+            this.txtCoverImage.Size = new System.Drawing.Size(100, 20);
+            this.txtCoverImage.TabIndex = 15;
+            // 
             // frmComicEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtCoverImage);
+            this.Controls.Add(this.lblUrl);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblIllustrator);
@@ -226,5 +246,7 @@
         private System.Windows.Forms.Label lblIllustrator;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label lblUrl;
+        private System.Windows.Forms.TextBox txtCoverImage;
     }
 }
