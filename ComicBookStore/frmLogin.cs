@@ -30,7 +30,9 @@ namespace ComicBookStore
         {
             if(controller.ValidateCustomerLogin(txtCustUser.Text, txtCustPass.Text))
             {
-                frmCustMenu customerMenu = new frmCustMenu();
+
+                Customer customer = controller.GetCustomerByUsername(txtCustUser.Text);
+                frmCustMenu customerMenu = new frmCustMenu(customer);
                 customerMenu.ShowDialog();
 
             }

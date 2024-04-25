@@ -199,5 +199,25 @@ namespace ComicBookStore
             }
         }
 
+        public Customer GetCustomerByUsername(string username)
+        {
+            strSQL = $"SELECT * FROM CustomersLogin WHERE CustomerUsername = '{username}'";
+
+            DataTable dataTable = comicDatabase.GetDatabaseInfo(strSQL);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                DataRow row = dataTable.Rows[0];
+                string password = row["CustomerPassword"].ToString();
+                string name = row["Name"].ToString();
+
+                return new Customer(username, password, name);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
     }
 }

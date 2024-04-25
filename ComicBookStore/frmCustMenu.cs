@@ -12,8 +12,11 @@ namespace ComicBookStore
 {
     public partial class frmCustMenu : Form
     {
-        public frmCustMenu()
+        private Customer loggedInCustomer;
+
+        internal frmCustMenu(Customer customer)
         {
+            loggedInCustomer = customer;
             InitializeComponent();
         }
 
@@ -21,9 +24,8 @@ namespace ComicBookStore
         {
 
 
-            //maybe we could pass the customer username to the display form so that we can display the comics that the customer has purchased
 
-           frmCustComicDisplay displayForm = new frmCustComicDisplay();
+           frmCustComicDisplay displayForm = new frmCustComicDisplay(loggedInCustomer);
             displayForm.Show();
 
 

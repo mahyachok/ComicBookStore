@@ -10,15 +10,18 @@ using System.Windows.Forms;
 
 namespace ComicBookStore
 {
-    public partial class frmCustComicDisplay : Form
+    internal partial class frmCustComicDisplay : Form
     {
         private ComicbookController controller;
         private FlowLayoutPanel flowLayoutPanel;
-        public frmCustComicDisplay()
+        private Customer loggedInCustomer;
+
+        public frmCustComicDisplay(Customer customer)
         {
             InitializeComponent();
 
             controller = new ComicbookController();
+            loggedInCustomer = customer;
 
             flowLayoutPanel = new FlowLayoutPanel();
             flowLayoutPanel.Dock = DockStyle.Fill;
