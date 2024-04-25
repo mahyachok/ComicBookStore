@@ -60,13 +60,13 @@ namespace ComicBookStore
 
         public void AddCustomerToDatabase(Customer newCustomer)
         {
-            strSQL = $"INSERT INTO CustomersLogin (CustomerUsername, CustomerPassword) VALUES ('{newCustomer.Username}', {newCustomer.Password})";
+            strSQL = $"INSERT INTO CustomersLogin (CustomerUsername, CustomerPassword, CustomerName) VALUES ('{newCustomer.Username}', {newCustomer.Password}), '{newCustomer.Name}'";
             comicDatabase.DatabaseInsert(strSQL);
         }
 
         public void AddEmployeeToDatabase(Employee newEmployee)
         {
-            strSQL = $"INSERT INTO EmployeeLogin (EmployeeUsername, EmployeePassword) VALUES ('{newEmployee.Username}', {newEmployee.Password})";
+            strSQL = $"INSERT INTO EmployeeLogin (EmployeeUsername, EmployeePassword, EmployeeName, Salary, StoreName, Address) VALUES ('{newEmployee.Username}', {newEmployee.Password}, {newEmployee.Salary}, {newEmployee.StoreName}, {newEmployee.Address})";
             comicDatabase.DatabaseInsert(strSQL);
         }
 
