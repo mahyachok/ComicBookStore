@@ -147,5 +147,57 @@ namespace ComicBookStore
 
             return count > 0;
         }
+
+        public List<Comicbook> GetPurchasedComicsByCustomer(string customerUsername)
+        {
+            List<Comicbook> purchasedComics = new List<Comicbook>();
+
+            strSQL = $"SELECT * FROM CustomerCollection WHERE CustomerUsername = '{customerUsername}'";
+
+            DataTable dataTable = comicDatabase.GetDatabaseInfo(strSQL);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                string comicUPC = row["ComicUPC"].ToString();
+                int quantity = Convert.ToInt32(row["Quantity"]);
+
+                Comicbook comicbook = GetComicByUPC(comicUPC);
+
+                if (comicbook != null)
+                {
+                    purchasedComics.Add(comicbook);
+                }
+            }
+
+            return purchasedComics;
+        }
+
+        public Comicbook GetComicByUPC(string upc)
+        {
+            string strSQL = $"SELECT * FROM ComicCollection WHERE UPC = '{upc}'";
+
+            DataTable dataTable = comicDatabase.GetDatabaseInfo(strSQL);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                DataRow row = dataTable.Rows[0];
+
+                string title = row["Title"].ToString();
+                int issueNumber = Convert.ToInt32(row["IssueNo"]);
+                string coverImage = row["CoverImage"].ToString();
+                string author = row["Author"].ToString();
+                string illustrator = row["Illustrator"].ToString();
+                double price = Convert.ToDouble(row["Price"]);
+                bool variant = Convert.ToBoolean(row["VariantCover"]);
+                bool reprint = Convert.ToBoolean(row["Reprint"]);
+
+                return new Comicbook(title, upc, issueNumber, coverImage, author, illustrator, price, variant, reprint);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
     }
 }
