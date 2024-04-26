@@ -19,8 +19,8 @@ namespace ComicBookStore
 
         private void btnModifyComics_Click(object sender, EventArgs e)
         {
-           // frmModifyComics modifyComics = new frmModifyComics();
-          //  modifyComics.ShowDialog();
+           frmModifyComics modifyComics = new frmModifyComics();
+            modifyComics.ShowDialog();
 
         }
 

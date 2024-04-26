@@ -49,8 +49,7 @@ namespace ComicBookStore
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            frmDeleteComics frm = new frmDeleteComics();
-            frm.Show();
+            
 
         }
 

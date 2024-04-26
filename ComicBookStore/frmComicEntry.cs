@@ -87,5 +87,11 @@ namespace ComicBookStore
 
 
         }
+
+        private void txtCoverImage_TextChanged(object sender, EventArgs e)
+        {
+            picboxCover.ImageLocation = txtCoverImage.Text; 
+
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace ComicBookStore
 
             controller = new ComicbookController();
             loggedInCustomer = customer;
-
+            
             flowLayoutPanel = new FlowLayoutPanel();
             flowLayoutPanel.Dock = DockStyle.Fill;
             Controls.Add(flowLayoutPanel);
@@ -30,10 +30,10 @@ namespace ComicBookStore
 
         private void frmCustComicDisplay_Load(object sender, EventArgs e)
         {
+            string custUsername = loggedInCustomer.Username;
 
-
-            //string str = $"SELECT * FROM Comicbook WHERE CustomerUsername = '{custUsername}'";
-            DataTable dataTable = controller.DisplayComics();
+            string str = $"SELECT * FROM Comicbook WHERE CustomerUsername = '{custUsername}'";
+            DataTable dataTable = controller.DisplayComics(str);
 
             foreach (DataRow row in dataTable.Rows)
             {

@@ -12,9 +12,39 @@ namespace ComicBookStore
 {
     public partial class frmModifyComics : Form
     {
+        private ComicbookController controller;
+
         public frmModifyComics()
         {
             InitializeComponent();
+        }
+
+        private void frmModifyComics_Load(object sender, EventArgs e)
+        {
+
+            //dgvComics.DataSource = controller.DisplayComics();
+
+
+
+
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+
+            //controller.ModifyComic(txtUPC.Text, txtTitle.Text, txtIssueNo.Text, txtAuthor.Text, txtIllustrator.Text, txtPrice.Text);
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //controller.DeleteComic(txtUPC.Text);
+
+        }
+
+        private void dgvComics_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

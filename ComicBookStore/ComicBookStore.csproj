@@ -65,12 +65,6 @@
     <Compile Include="frmCustMenu.Designer.cs">
       <DependentUpon>frmCustMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDeleteComics.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDeleteComics.Designer.cs">
-      <DependentUpon>frmDeleteComics.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmEmpMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModifyComics.resx">
+      <DependentUpon>frmModifyComics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
