@@ -34,15 +34,6 @@ namespace ComicBookStore
             List<Comicbook> purchasedComics = controller.GetPurchasedComicsByCustomer(loggedInCustomer.Username);
 
             foreach (Comicbook comic in purchasedComics)
-            foreach (DataRow row in dataTable.Rows)
-            foreach (DataRow row in dataTable.Rows)
-            foreach (DataRow row in dataTable.Rows)
-            foreach (DataRow row in dataTable.Rows)
-            foreach (DataRow row in dataTable.Rows)
-            foreach (DataRow row in dataTable.Rows)
-            foreach (DataRow row in dataTable.Rows)
-            foreach (DataRow row in dataTable.Rows)
-            foreach (DataRow row in dataTable.Rows)
             {
                 UserControl comicItem = new UserControl();
                 comicItem.Padding = new Padding(5);

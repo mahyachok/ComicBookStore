@@ -38,7 +38,8 @@ namespace ComicBookStore
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //controller.DeleteComic(txtUPC.Text);
+           // controller.DeleteComicFromDatabase(selectedComicbook); 
+           // need to make logic to retrieve selected row as comicbook object
 
         }
 
