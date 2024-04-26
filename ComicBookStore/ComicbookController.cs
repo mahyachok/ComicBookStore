@@ -60,7 +60,7 @@ namespace ComicBookStore
 
         public void AddCustomerToDatabase(Customer newCustomer)
         {
-            strSQL = $"INSERT INTO CustomersLogin (CustomerUsername, CustomerPassword, CustomerName) VALUES ('{newCustomer.Username}', {newCustomer.Password}), '{newCustomer.Name}'";
+            strSQL = $"INSERT INTO CustomersLogin (CustomerUsername, CustomerPassword, CustomerName) VALUES ('{newCustomer.Username}', '{newCustomer.Password}', '{newCustomer.Name}')";
             comicDatabase.DatabaseInsert(strSQL);
         }
 
@@ -210,7 +210,7 @@ namespace ComicBookStore
             {
                 DataRow row = dataTable.Rows[0];
                 string password = row["CustomerPassword"].ToString();
-                string name = row["Name"].ToString();
+                string name = row["CustomerName"].ToString();
 
                 return new Customer(username, password, name);
             }

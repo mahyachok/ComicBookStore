@@ -44,7 +44,7 @@ namespace ComicBookStore
                 tableLayoutPanel.AutoSize = true;
                 tableLayoutPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
 
-                // Display the comic details
+                // display comic details
                 tableLayoutPanel.Controls.Add(CreateLabel("UPC: " + comic.UPC));
                 tableLayoutPanel.Controls.Add(CreateLabel("Title: " + comic.SeriesTitle));
                 tableLayoutPanel.Controls.Add(CreateLabel("Issue No: " + comic.IssueNumber));
