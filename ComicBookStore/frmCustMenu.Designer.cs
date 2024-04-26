@@ -40,7 +40,7 @@
             this.btnAddComics.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnAddComics.Size = new System.Drawing.Size(207, 76);
             this.btnAddComics.TabIndex = 0;
-            this.btnAddComics.Text = "AddComics";
+            this.btnAddComics.Text = "Add Comics";
             this.btnAddComics.UseVisualStyleBackColor = true;
             this.btnAddComics.Click += new System.EventHandler(this.btnAddComics_Click);
             // 
@@ -51,7 +51,7 @@
             this.btnSellComics.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnSellComics.Size = new System.Drawing.Size(177, 76);
             this.btnSellComics.TabIndex = 1;
-            this.btnSellComics.Text = "Sell comics";
+            this.btnSellComics.Text = "Sell Comics";
             this.btnSellComics.UseVisualStyleBackColor = true;
             this.btnSellComics.Click += new System.EventHandler(this.btnSellComics_Click);
             // 

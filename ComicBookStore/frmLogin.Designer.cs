@@ -62,7 +62,7 @@
             // 
             // btnCustLogin
             // 
-            this.btnCustLogin.Location = new System.Drawing.Point(143, 176);
+            this.btnCustLogin.Location = new System.Drawing.Point(113, 176);
             this.btnCustLogin.Name = "btnCustLogin";
             this.btnCustLogin.Size = new System.Drawing.Size(75, 23);
             this.btnCustLogin.TabIndex = 2;

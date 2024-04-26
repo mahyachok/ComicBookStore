@@ -34,14 +34,29 @@ namespace ComicBookStore
         }
 
         private void btnModify_Click(object sender, EventArgs e)
-        {/*
+        {
             bool variant = false;
             bool reprint = false;
 
             int upc;
+            int issue;
+            double price;
+
             if (!int.TryParse(txtUPC.Text, out upc))
             {
                 MessageBox.Show("Invalid UPC format. Please enter a valid integer UPC.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!int.TryParse(txtIssueNo.Text, out issue))
+            {
+                MessageBox.Show("Invalid issue number format. Please enter a valid integer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!double.TryParse(txtPrice.Text, out price))
+            {
+                MessageBox.Show("Invalid price format. Please enter a valid decimal price.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -63,10 +78,10 @@ namespace ComicBookStore
 
             
 
-            Comicbook modifiedComic = new Comicbook(txtTitle.Text, upc, int.Parse(txtIssueNo.Text), txtCoverImage.Text, txtAuthor.Text, txtIllustrator.Text, double.Parse(txtPrice.Text), variant, reprint);
+            Comicbook modifiedComic = new Comicbook(txtTitle.Text, upc, issue, txtCoverImage.Text, txtAuthor.Text, txtIllustrator.Text, double.Parse(txtPrice.Text), variant, reprint);
             controller.ModifyComicBook(modifiedComic);
 
-            */
+            
 
 
 
@@ -117,7 +132,7 @@ namespace ComicBookStore
                 string price = row.Cells["Price"].Value.ToString();
 
 
-                /*
+                
                 selectedComicbook.UPC = int.Parse(upc);
                 selectedComicbook.SeriesTitle = title;
                 selectedComicbook.IssueNumber = int.Parse(issueNo);
@@ -125,13 +140,15 @@ namespace ComicBookStore
                 selectedComicbook.Author = author;
                 selectedComicbook.Illustrator = illustrator;
                 selectedComicbook.Price = double.Parse(price);
-                */
 
 
-
-
-
-
+                txtUPC.Text = selectedComicbook.UPC.ToString();
+                txtTitle.Text = selectedComicbook.SeriesTitle;
+                txtIssueNo.Text = selectedComicbook.IssueNumber.ToString();
+                txtCoverImage.Text = selectedComicbook.CoverImage;
+                txtAuthor.Text = selectedComicbook.Author;
+                txtIllustrator.Text = selectedComicbook.Illustrator;
+                txtPrice.Text = selectedComicbook.Price.ToString();
 
             }
         }
@@ -139,7 +156,7 @@ namespace ComicBookStore
         private void btnAddToText_Click(object sender, EventArgs e)
         {
 
-            /*
+            
             txtUPC.Text = selectedComicbook.UPC.ToString();
             txtTitle.Text = selectedComicbook.SeriesTitle;
             txtIssueNo.Text = selectedComicbook.IssueNumber.ToString();
@@ -147,7 +164,7 @@ namespace ComicBookStore
             txtAuthor.Text = selectedComicbook.Author;
             txtIllustrator.Text = selectedComicbook.Illustrator;
             txtPrice.Text = selectedComicbook.Price.ToString();
-            */
+            
 
 
 
