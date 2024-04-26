@@ -33,7 +33,16 @@ namespace ComicBookStore
 
         private void frmCustAddComicsToCollection_Load(object sender, EventArgs e)
         {
-            dgvComicbookSelection.DataSource = comicbookController.DisplayComics(); 
+            DataTable comics = comicbookController.DisplayComics();
+
+            foreach (DataRow row in comics.Rows)
+            {
+                string coverImageUrl = row["CoverImage"].ToString();
+                imgComic.Load(coverImageUrl);
+                row["CoverImage"] = imgComic.Image;
+            }
+
+            dgvComicbookSelection.DataSource = comics;
         }
 
         private void btnCollection_Click(object sender, EventArgs e)
