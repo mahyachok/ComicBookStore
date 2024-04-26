@@ -16,5 +16,10 @@ namespace ComicBookStore
         {
             InitializeComponent();
         }
+
+        private void propGridComicCollection_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

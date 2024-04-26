@@ -28,12 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.propGridComicCollection = new System.Windows.Forms.PropertyGrid();
+            this.SuspendLayout();
+            // 
+            // propGridComicCollection
+            // 
+            this.propGridComicCollection.Location = new System.Drawing.Point(163, 12);
+            this.propGridComicCollection.Name = "propGridComicCollection";
+            this.propGridComicCollection.Size = new System.Drawing.Size(336, 325);
+            this.propGridComicCollection.TabIndex = 0;
+            this.propGridComicCollection.Click += new System.EventHandler(this.propGridComicCollection_Click);
+            // 
+            // frmCustAddComicsToCollection
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.propGridComicCollection);
+            this.Name = "frmCustAddComicsToCollection";
             this.Text = "frmCustAddComicsToCollection";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.PropertyGrid propGridComicCollection;
     }
 }

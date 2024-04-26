@@ -124,6 +124,9 @@
     <EmbeddedResource Include="frmComicDisplay.resx">
       <DependentUpon>frmComicDisplay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCustAddComicsToCollection.resx">
+      <DependentUpon>frmCustAddComicsToCollection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCustComicDisplay.resx">
       <DependentUpon>frmCustComicDisplay.cs</DependentUpon>
     </EmbeddedResource>
