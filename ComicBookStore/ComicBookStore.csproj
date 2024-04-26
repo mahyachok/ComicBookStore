@@ -53,6 +53,12 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="frmCustAddComicsToCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustAddComicsToCollection.Designer.cs">
+      <DependentUpon>frmCustAddComicsToCollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustComicDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
