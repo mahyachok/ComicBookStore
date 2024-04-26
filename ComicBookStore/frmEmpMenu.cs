@@ -13,10 +13,10 @@ namespace ComicBookStore
     public partial class frmEmpMenu : Form
     {
         Employee loggedInEmployee;
-        internal frmEmpMenu(Employee loggedInEmployee)
+        internal frmEmpMenu(Employee employee)
         {
             InitializeComponent();
-            this.loggedInEmployee = loggedInEmployee;
+            loggedInEmployee = employee;
         }
 
         private void btnModifyComics_Click(object sender, EventArgs e)

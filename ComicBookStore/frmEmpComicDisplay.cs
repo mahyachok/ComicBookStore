@@ -16,10 +16,10 @@ namespace ComicBookStore
         private ComicbookController controller;
         private FlowLayoutPanel flowLayoutPanel;
 
-        internal frmEmpComicDisplay(Employee loggedInEmployee)
+        internal frmEmpComicDisplay(Employee employee)
         {
             InitializeComponent();
-            this.loggedInEmployee = loggedInEmployee;
+            loggedInEmployee = employee;
             controller = new ComicbookController();
             LoadComicDisplay();
         }
