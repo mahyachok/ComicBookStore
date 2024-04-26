@@ -35,10 +35,10 @@
             // 
             // btnAddComics
             // 
-            this.btnAddComics.Location = new System.Drawing.Point(297, 134);
+            this.btnAddComics.Location = new System.Drawing.Point(71, 161);
             this.btnAddComics.Name = "btnAddComics";
             this.btnAddComics.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAddComics.Size = new System.Drawing.Size(75, 23);
+            this.btnAddComics.Size = new System.Drawing.Size(207, 76);
             this.btnAddComics.TabIndex = 0;
             this.btnAddComics.Text = "AddComics";
             this.btnAddComics.UseVisualStyleBackColor = true;
@@ -46,10 +46,10 @@
             // 
             // btnSellComics
             // 
-            this.btnSellComics.Location = new System.Drawing.Point(481, 134);
+            this.btnSellComics.Location = new System.Drawing.Point(538, 161);
             this.btnSellComics.Name = "btnSellComics";
             this.btnSellComics.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnSellComics.Size = new System.Drawing.Size(75, 23);
+            this.btnSellComics.Size = new System.Drawing.Size(177, 76);
             this.btnSellComics.TabIndex = 1;
             this.btnSellComics.Text = "Sell comics";
             this.btnSellComics.UseVisualStyleBackColor = true;
@@ -57,10 +57,10 @@
             // 
             // btnViewCollection
             // 
-            this.btnViewCollection.Location = new System.Drawing.Point(363, 214);
+            this.btnViewCollection.Location = new System.Drawing.Point(311, 161);
             this.btnViewCollection.Name = "btnViewCollection";
             this.btnViewCollection.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnViewCollection.Size = new System.Drawing.Size(83, 74);
+            this.btnViewCollection.Size = new System.Drawing.Size(189, 76);
             this.btnViewCollection.TabIndex = 2;
             this.btnViewCollection.Text = "View Comic Collection";
             this.btnViewCollection.UseVisualStyleBackColor = true;

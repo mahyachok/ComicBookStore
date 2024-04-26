@@ -36,10 +36,10 @@
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(173, 51);
+            this.btnBrowse.Location = new System.Drawing.Point(178, 138);
             this.btnBrowse.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(116, 70);
+            this.btnBrowse.Size = new System.Drawing.Size(162, 70);
             this.btnBrowse.TabIndex = 0;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -47,10 +47,10 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(94, 184);
+            this.btnLogin.Location = new System.Drawing.Point(178, 230);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(116, 70);
+            this.btnLogin.Size = new System.Drawing.Size(162, 70);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -58,10 +58,10 @@
             // 
             // btnModify
             // 
-            this.btnModify.Location = new System.Drawing.Point(428, 164);
+            this.btnModify.Location = new System.Drawing.Point(356, 230);
             this.btnModify.Margin = new System.Windows.Forms.Padding(2);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(116, 70);
+            this.btnModify.Size = new System.Drawing.Size(162, 70);
             this.btnModify.TabIndex = 3;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -69,10 +69,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(428, 72);
+            this.btnAdd.Location = new System.Drawing.Point(356, 138);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(116, 70);
+            this.btnAdd.Size = new System.Drawing.Size(162, 70);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add Entry";
             this.btnAdd.UseVisualStyleBackColor = true;

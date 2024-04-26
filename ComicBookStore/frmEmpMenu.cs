@@ -36,6 +36,13 @@ namespace ComicBookStore
         private void btnEmpStock_Click(object sender, EventArgs e)
         {
             frmEmpComicDisplay comicDisplay = new frmEmpComicDisplay(loggedInEmployee);
+            comicDisplay.ShowDialog();
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            frmEmpComicDisplay comicDisplay = new frmEmpComicDisplay(loggedInEmployee);
+            comicDisplay.ShowDialog();
         }
     }
 }
