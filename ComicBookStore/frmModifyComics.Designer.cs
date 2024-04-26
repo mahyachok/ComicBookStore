@@ -40,14 +40,22 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.chkVariant = new System.Windows.Forms.CheckBox();
             this.chkReprint = new System.Windows.Forms.CheckBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblIssue = new System.Windows.Forms.Label();
+            this.lblCover = new System.Windows.Forms.Label();
+            this.lblAuthor = new System.Windows.Forms.Label();
+            this.lblIllustrator = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblInstruc = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComics)).BeginInit();
             this.SuspendLayout();
             // 
             // btnModify
             // 
-            this.btnModify.Location = new System.Drawing.Point(670, 262);
+            this.btnModify.Location = new System.Drawing.Point(684, 341);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(75, 23);
+            this.btnModify.Size = new System.Drawing.Size(75, 37);
             this.btnModify.TabIndex = 0;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -55,9 +63,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(670, 305);
+            this.btnDelete.Location = new System.Drawing.Point(684, 384);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 35);
+            this.btnDelete.Size = new System.Drawing.Size(75, 37);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -65,42 +73,42 @@
             // 
             // txtUPC
             // 
-            this.txtUPC.Location = new System.Drawing.Point(467, 117);
+            this.txtUPC.Location = new System.Drawing.Point(568, 71);
             this.txtUPC.Name = "txtUPC";
             this.txtUPC.Size = new System.Drawing.Size(100, 20);
             this.txtUPC.TabIndex = 2;
             // 
             // txtIssueNo
             // 
-            this.txtIssueNo.Location = new System.Drawing.Point(467, 206);
+            this.txtIssueNo.Location = new System.Drawing.Point(568, 152);
             this.txtIssueNo.Name = "txtIssueNo";
             this.txtIssueNo.Size = new System.Drawing.Size(100, 20);
             this.txtIssueNo.TabIndex = 3;
             // 
             // txtCoverImage
             // 
-            this.txtCoverImage.Location = new System.Drawing.Point(467, 262);
+            this.txtCoverImage.Location = new System.Drawing.Point(568, 195);
             this.txtCoverImage.Name = "txtCoverImage";
             this.txtCoverImage.Size = new System.Drawing.Size(100, 20);
             this.txtCoverImage.TabIndex = 4;
             // 
             // txtAuthor
             // 
-            this.txtAuthor.Location = new System.Drawing.Point(467, 320);
+            this.txtAuthor.Location = new System.Drawing.Point(568, 232);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(100, 20);
             this.txtAuthor.TabIndex = 5;
             // 
             // txtIllustrator
             // 
-            this.txtIllustrator.Location = new System.Drawing.Point(467, 365);
+            this.txtIllustrator.Location = new System.Drawing.Point(568, 269);
             this.txtIllustrator.Name = "txtIllustrator";
             this.txtIllustrator.Size = new System.Drawing.Size(100, 20);
             this.txtIllustrator.TabIndex = 6;
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(467, 162);
+            this.txtTitle.Location = new System.Drawing.Point(568, 109);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(100, 20);
             this.txtTitle.TabIndex = 7;
@@ -108,15 +116,15 @@
             // dgvComics
             // 
             this.dgvComics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvComics.Location = new System.Drawing.Point(102, 52);
+            this.dgvComics.Location = new System.Drawing.Point(55, 67);
             this.dgvComics.Name = "dgvComics";
-            this.dgvComics.Size = new System.Drawing.Size(240, 318);
+            this.dgvComics.Size = new System.Drawing.Size(383, 318);
             this.dgvComics.TabIndex = 8;
             this.dgvComics.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComics_CellContentClick);
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(467, 418);
+            this.txtPrice.Location = new System.Drawing.Point(568, 309);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(100, 20);
             this.txtPrice.TabIndex = 9;
@@ -124,7 +132,7 @@
             // chkVariant
             // 
             this.chkVariant.AutoSize = true;
-            this.chkVariant.Location = new System.Drawing.Point(602, 119);
+            this.chkVariant.Location = new System.Drawing.Point(568, 356);
             this.chkVariant.Name = "chkVariant";
             this.chkVariant.Size = new System.Drawing.Size(90, 17);
             this.chkVariant.TabIndex = 10;
@@ -134,18 +142,98 @@
             // chkReprint
             // 
             this.chkReprint.AutoSize = true;
-            this.chkReprint.Location = new System.Drawing.Point(602, 151);
+            this.chkReprint.Location = new System.Drawing.Point(568, 388);
             this.chkReprint.Name = "chkReprint";
             this.chkReprint.Size = new System.Drawing.Size(60, 17);
             this.chkReprint.TabIndex = 11;
             this.chkReprint.Text = "Reprint";
             this.chkReprint.UseVisualStyleBackColor = true;
             // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(489, 78);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(32, 13);
+            this.lblName.TabIndex = 12;
+            this.lblName.Text = "UPC:";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Location = new System.Drawing.Point(489, 112);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(30, 13);
+            this.lblTitle.TabIndex = 12;
+            this.lblTitle.Text = "Title:";
+            // 
+            // lblIssue
+            // 
+            this.lblIssue.AutoSize = true;
+            this.lblIssue.Location = new System.Drawing.Point(489, 152);
+            this.lblIssue.Name = "lblIssue";
+            this.lblIssue.Size = new System.Drawing.Size(75, 13);
+            this.lblIssue.TabIndex = 12;
+            this.lblIssue.Text = "Issue Number:";
+            // 
+            // lblCover
+            // 
+            this.lblCover.AutoSize = true;
+            this.lblCover.Location = new System.Drawing.Point(489, 195);
+            this.lblCover.Name = "lblCover";
+            this.lblCover.Size = new System.Drawing.Size(70, 13);
+            this.lblCover.TabIndex = 12;
+            this.lblCover.Text = "Cover Image:";
+            // 
+            // lblAuthor
+            // 
+            this.lblAuthor.AutoSize = true;
+            this.lblAuthor.Location = new System.Drawing.Point(489, 232);
+            this.lblAuthor.Name = "lblAuthor";
+            this.lblAuthor.Size = new System.Drawing.Size(41, 13);
+            this.lblAuthor.TabIndex = 12;
+            this.lblAuthor.Text = "Author:";
+            // 
+            // lblIllustrator
+            // 
+            this.lblIllustrator.AutoSize = true;
+            this.lblIllustrator.Location = new System.Drawing.Point(489, 269);
+            this.lblIllustrator.Name = "lblIllustrator";
+            this.lblIllustrator.Size = new System.Drawing.Size(52, 13);
+            this.lblIllustrator.TabIndex = 12;
+            this.lblIllustrator.Text = "Illustrator:";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(489, 312);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(34, 13);
+            this.lblPrice.TabIndex = 12;
+            this.lblPrice.Text = "Price:";
+            // 
+            // lblInstruc
+            // 
+            this.lblInstruc.AutoSize = true;
+            this.lblInstruc.Location = new System.Drawing.Point(55, 48);
+            this.lblInstruc.Name = "lblInstruc";
+            this.lblInstruc.Size = new System.Drawing.Size(225, 13);
+            this.lblInstruc.TabIndex = 13;
+            this.lblInstruc.Text = "Select a comic from the list to delete or modify.";
+            // 
             // frmModifyComics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblInstruc);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.lblIllustrator);
+            this.Controls.Add(this.lblAuthor);
+            this.Controls.Add(this.lblCover);
+            this.Controls.Add(this.lblIssue);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.chkReprint);
             this.Controls.Add(this.chkVariant);
             this.Controls.Add(this.txtPrice);
@@ -181,5 +269,13 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.CheckBox chkVariant;
         private System.Windows.Forms.CheckBox chkReprint;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblIssue;
+        private System.Windows.Forms.Label lblCover;
+        private System.Windows.Forms.Label lblAuthor;
+        private System.Windows.Forms.Label lblIllustrator;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblInstruc;
     }
 }
