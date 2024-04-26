@@ -177,8 +177,9 @@ namespace ComicBookStore
 
         public Comicbook GetComicByUPC(int upc)
         {
-            string strSQL = $"SELECT * FROM ComicCollection WHERE UPC = '{upc}'";
+            string strSQL = $"SELECT * FROM ComicCollection WHERE UPC = {upc}";
 
+            
             DataTable dataTable = comicDatabase.GetDatabaseInfo(strSQL);
 
             if (dataTable.Rows.Count > 0)

@@ -40,7 +40,7 @@
             // propGridComicCollection
             // 
             this.propGridComicCollection.Location = new System.Drawing.Point(512, 54);
-            this.propGridComicCollection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.propGridComicCollection.Margin = new System.Windows.Forms.Padding(2);
             this.propGridComicCollection.Name = "propGridComicCollection";
             this.propGridComicCollection.Size = new System.Drawing.Size(255, 212);
             this.propGridComicCollection.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             this.dgvComicbookSelection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComicbookSelection.Location = new System.Drawing.Point(23, 69);
-            this.dgvComicbookSelection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvComicbookSelection.Margin = new System.Windows.Forms.Padding(2);
             this.dgvComicbookSelection.Name = "dgvComicbookSelection";
             this.dgvComicbookSelection.RowHeadersWidth = 82;
             this.dgvComicbookSelection.RowTemplate.Height = 33;
@@ -63,7 +63,7 @@
             // btnCollection
             // 
             this.btnCollection.Location = new System.Drawing.Point(447, 480);
-            this.btnCollection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCollection.Margin = new System.Windows.Forms.Padding(2);
             this.btnCollection.Name = "btnCollection";
             this.btnCollection.Size = new System.Drawing.Size(144, 49);
             this.btnCollection.TabIndex = 2;
@@ -76,7 +76,7 @@
             this.imgComic.Location = new System.Drawing.Point(36, 293);
             this.imgComic.Name = "imgComic";
             this.imgComic.Size = new System.Drawing.Size(166, 236);
-            this.imgComic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgComic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imgComic.TabIndex = 3;
             this.imgComic.TabStop = false;
             // 
@@ -102,7 +102,7 @@
             this.Controls.Add(this.btnCollection);
             this.Controls.Add(this.dgvComicbookSelection);
             this.Controls.Add(this.propGridComicCollection);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCustAddComicsToCollection";
             this.Text = "frmCustAddComicsToCollection";
             this.Load += new System.EventHandler(this.frmCustAddComicsToCollection_Load);

@@ -33,6 +33,7 @@ namespace ComicBookStore
                 Comicbook selectedComicbook = dgvComicbookSelection.SelectedRows[0].DataBoundItem as Comicbook;
                 propGridComicCollection.SelectedObject = selectedComicbook;
             }
+
         }
 
         private void frmCustAddComicsToCollection_Load(object sender, EventArgs e)
@@ -69,6 +70,9 @@ namespace ComicBookStore
                 Comicbook selectedComicbook = dgvComicbookSelection.SelectedRows[0].DataBoundItem as Comicbook;
                 propGridComicCollection.SelectedObject = selectedComicbook;
             }
+
+            //imgComic.ImageLocation = dgvComicbookSelection.SelectedRows[0].Cells["CoverImage"].Value.ToString();
+
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
