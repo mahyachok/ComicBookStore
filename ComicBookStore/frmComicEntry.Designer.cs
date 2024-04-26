@@ -207,6 +207,7 @@
             this.picboxCover.Location = new System.Drawing.Point(298, 70);
             this.picboxCover.Name = "picboxCover";
             this.picboxCover.Size = new System.Drawing.Size(148, 180);
+            this.picboxCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picboxCover.TabIndex = 16;
             this.picboxCover.TabStop = false;
             // 

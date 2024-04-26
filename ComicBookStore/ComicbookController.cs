@@ -154,8 +154,10 @@ namespace ComicBookStore
             List<Comicbook> purchasedComics = new List<Comicbook>();
 
             strSQL = $"SELECT * FROM CustomerCollection WHERE CustomerUsername = '{customerUsername}'";
+            Console.WriteLine($"SQL Query: {strSQL}");
 
             DataTable dataTable = comicDatabase.GetDatabaseInfo(strSQL);
+            Console.WriteLine($"Number of rows in dataTable: {dataTable.Rows.Count}");
 
             foreach (DataRow row in dataTable.Rows)
             {

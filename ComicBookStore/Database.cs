@@ -85,7 +85,7 @@ namespace ComicBookStore
 
         OleDbConnection myConnection;
         OleDbDataAdapter myDataAdapter;
-        DataSet courseDataSet;
+        DataSet comicDataSet;
         DataTable comicTable;
         BindingSource myBindingSource;
         string strSQL;
@@ -107,12 +107,10 @@ namespace ComicBookStore
             
 
             myDataAdapter = new OleDbDataAdapter(strSQL, myConnection);
-            courseDataSet = new DataSet("Comic");
-            myDataAdapter.Fill(courseDataSet, "Comic");
+            comicDataSet = new DataSet("Comic");
+            myDataAdapter.Fill(comicDataSet, "Comic");
 
-            // Display the data from the query in the ComboBox control.
-
-            comicTable = courseDataSet.Tables["Comic"];
+            comicTable = comicDataSet.Tables["Comic"];
             
 
            
@@ -131,13 +129,20 @@ namespace ComicBookStore
 
             myCommand = new OleDbCommand(queryString,myConnection);
             myDataAdapter = new OleDbDataAdapter(myCommand);
-
-            myConnection.Open();
-
-            myCommand.ExecuteNonQuery();
-        
-
-            myConnection.Close();
+            try
+            {
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+                MessageBox.Show("Comic added to collection!");
+            }
+            catch (OleDbException ex)
+            {
+                MessageBox.Show("An error occurred while purchasing the comic: " + ex.Message);
+            }
+            finally
+            {
+                myConnection.Close();
+            }
         }
 
 

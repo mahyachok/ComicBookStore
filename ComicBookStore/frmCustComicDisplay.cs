@@ -30,7 +30,6 @@ namespace ComicBookStore
 
         private void frmCustComicDisplay_Load(object sender, EventArgs e)
         {
-            // Get the purchased comics by the logged-in customer
             List<Comicbook> purchasedComics = controller.GetPurchasedComicsByCustomer(loggedInCustomer.Username);
 
             foreach (Comicbook comic in purchasedComics)
