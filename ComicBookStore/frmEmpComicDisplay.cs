@@ -35,6 +35,8 @@ namespace ComicBookStore
             List<int> storeComicUPCs = controller.GetStoreComicUPCs(storeName);
 
             DisplayComics(storeComicUPCs);
+
+            cmboStore.Items.Add(storeName);
         }
 
         private void DisplayComics(List<int> comicUPCs)
@@ -90,6 +92,13 @@ namespace ComicBookStore
 
         private void frmEmpComicDisplay_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void cmboStore_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
 
         }
     }
