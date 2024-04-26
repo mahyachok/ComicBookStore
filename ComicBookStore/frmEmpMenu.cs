@@ -12,9 +12,11 @@ namespace ComicBookStore
 {
     public partial class frmEmpMenu : Form
     {
-        public frmEmpMenu()
+        Employee loggedInEmployee;
+        internal frmEmpMenu(Employee loggedInEmployee)
         {
             InitializeComponent();
+            this.loggedInEmployee = loggedInEmployee;
         }
 
         private void btnModifyComics_Click(object sender, EventArgs e)
@@ -29,6 +31,11 @@ namespace ComicBookStore
             frmComicEntry comicEntry = new frmComicEntry();
             comicEntry.ShowDialog();
 
+        }
+
+        private void btnEmpStock_Click(object sender, EventArgs e)
+        {
+            frmEmpComicDisplay comicDisplay = new frmEmpComicDisplay(loggedInEmployee);
         }
     }
 }

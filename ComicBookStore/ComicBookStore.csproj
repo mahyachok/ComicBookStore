@@ -65,6 +65,12 @@
     <Compile Include="frmCustMenu.Designer.cs">
       <DependentUpon>frmCustMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEmpComicDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpComicDisplay.Designer.cs">
+      <DependentUpon>frmEmpComicDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmpMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustRegister.resx">
       <DependentUpon>frmCustRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpComicDisplay.resx">
+      <DependentUpon>frmEmpComicDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmpMenu.resx">
       <DependentUpon>frmEmpMenu.cs</DependentUpon>

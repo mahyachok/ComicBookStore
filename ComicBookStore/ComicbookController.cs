@@ -66,7 +66,8 @@ namespace ComicBookStore
 
         public void AddEmployeeToDatabase(Employee newEmployee)
         {
-            strSQL = $"INSERT INTO EmployeeLogin (EmployeeUsername, EmployeePassword, EmployeeName, Salary, StoreName, Address) VALUES ('{newEmployee.Username}', {newEmployee.Password}, {newEmployee.Salary}, {newEmployee.StoreName}, {newEmployee.Address})";
+            strSQL = $"INSERT INTO EmployeeLogin (EmployeeUsername, EmployeePassword, EmployeeName, Salary, StoreName, Address) " +
+                     $"VALUES ('{newEmployee.Username}', '{newEmployee.Password}', '{newEmployee.Name}', {newEmployee.Salary}, '{newEmployee.StoreName}', '{newEmployee.Address}')";
             comicDatabase.DatabaseInsert(strSQL);
         }
 
@@ -212,6 +213,29 @@ namespace ComicBookStore
                 string name = row["Name"].ToString();
 
                 return new Customer(username, password, name);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public Employee GetEmployeeByUsername(string username)
+        {
+            strSQL = $"SELECT * FROM EmployeeLogin WHERE EmployeeUsername = '{username}'";
+
+            DataTable dataTable = comicDatabase.GetDatabaseInfo(strSQL);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                DataRow row = dataTable.Rows[0];
+                string password = row["EmployeePassword"].ToString();
+                string storeName = row["StoreName"].ToString();
+                string name = row["EmployeeName"].ToString();
+                string address = row["Address"].ToString();
+                double salary = double.Parse(row["Salary"].ToString());
+
+                return new Employee(username, password, name, salary, storeName, address);
             }
             else
             {

@@ -54,15 +54,21 @@ namespace ComicBookStore
         private void btnEmpLogin_Click(object sender, EventArgs e)
         {
 
-            if (controller.ValidateEmployeeLogin(txtEmpUser.Text, txtEmpPass.Text))
+            string username = txtEmpUser.Text;
+            string password = txtEmpPass.Text;
+
+            if (controller.ValidateEmployeeLogin(username, password))
             {
-                frmEmpMenu employeeMenu = new frmEmpMenu();
+                // Retrieve employee details
+                Employee loggedInEmployee = controller.GetEmployeeByUsername(username);
+
+                // Pass employee details to the menu form
+                frmEmpMenu employeeMenu = new frmEmpMenu(loggedInEmployee);
                 employeeMenu.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Invalid employee login.");
-                return;
             }
 
         }
