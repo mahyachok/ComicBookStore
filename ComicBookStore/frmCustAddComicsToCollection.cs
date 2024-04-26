@@ -12,6 +12,8 @@ namespace ComicBookStore
 {
     public partial class frmCustAddComicsToCollection : Form
     {
+
+        ComicbookController comicbookController = new ComicbookController();
         public frmCustAddComicsToCollection()
         {
             InitializeComponent();
@@ -19,6 +21,27 @@ namespace ComicBookStore
 
         private void propGridComicCollection_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void dgvComicbookSelection_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void frmCustAddComicsToCollection_Load(object sender, EventArgs e)
+        {
+            dgvComicbookSelection.DataSource = comicbookController.DisplayComics(); 
+
+
+        }
+
+        private void btnCollection_Click(object sender, EventArgs e)
+        {
+            Comicbook selectedComicbook = (Comicbook)dgvComicbookSelection.CurrentRow.DataBoundItem;
+
+            comicbookController.AddComicToDatabase(selectedComicbook);
+
 
         }
     }

@@ -40,6 +40,8 @@ namespace ComicBookStore
 
         private void btnAddComics_Click(object sender, EventArgs e)
         {
+            frmCustAddComicsToCollection addComicsForm = new frmCustAddComicsToCollection();
+            addComicsForm.Show();
 
         }
     }
