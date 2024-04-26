@@ -59,10 +59,6 @@ namespace ComicBookStore
         }
 
 
-        private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private Label CreateLabel(string text)
         {
             Label label = new Label();
@@ -70,5 +66,6 @@ namespace ComicBookStore
             label.AutoSize = true;
             return label;
         }
+
     }
 }

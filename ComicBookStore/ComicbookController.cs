@@ -251,5 +251,22 @@ namespace ComicBookStore
 
             return count > 0;
         }
+
+        public List<int> GetStoreComicUPCs(string storeName)
+        {
+            List<int> storeComicUPCs = new List<int>();
+
+            strSQL = $"SELECT ComicUPC FROM StoreCollection WHERE StoreName = '{storeName}'";
+            DataTable dataTable = comicDatabase.GetDatabaseInfo(strSQL);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                int comicUPC = Convert.ToInt32(row["ComicUPC"]);
+                storeComicUPCs.Add(comicUPC);
+            }
+
+            return storeComicUPCs;
+        }
+
     }
 }

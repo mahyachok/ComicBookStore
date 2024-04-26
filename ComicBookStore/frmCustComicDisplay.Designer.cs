@@ -37,7 +37,6 @@
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.Size = new System.Drawing.Size(435, 304);
             this.tableLayoutPanel.TabIndex = 0;
-            this.tableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_Paint);
             // 
             // frmCustComicDisplay
             // 
