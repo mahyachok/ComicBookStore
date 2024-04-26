@@ -28,11 +28,16 @@ namespace ComicBookStore
 
         private void dgvComicbookSelection_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (dgvComicbookSelection.SelectedRows.Count > 0)
+            {
+                Comicbook selectedComicbook = dgvComicbookSelection.SelectedRows[0].DataBoundItem as Comicbook;
+                propGridComicCollection.SelectedObject = selectedComicbook;
+            }
         }
 
         private void frmCustAddComicsToCollection_Load(object sender, EventArgs e)
         {
+
             DataTable comics = comicbookController.DisplayComics();
 
             foreach (DataRow row in comics.Rows)
@@ -49,9 +54,11 @@ namespace ComicBookStore
         {
             if (dgvComicbookSelection.SelectedRows.Count > 0)
             {
-                Comicbook selectedComicbook = dgvComicbookSelection.SelectedRows[0].DataBoundItem as Comicbook;
-                comicbookController.AddComicToDatabase(selectedComicbook);
-                comicbookController.AddComicToCustomer(selectedComicbook, loggedInCustomer);
+                DataGridViewRow selectedRow = dgvComicbookSelection.SelectedRows[0];
+
+                int upc = int.Parse(selectedRow.Cells["UPC"].Value.ToString());
+
+                comicbookController.AddComicToCustomer(upc, loggedInCustomer);
             }
         }
 
@@ -62,6 +69,12 @@ namespace ComicBookStore
                 Comicbook selectedComicbook = dgvComicbookSelection.SelectedRows[0].DataBoundItem as Comicbook;
                 propGridComicCollection.SelectedObject = selectedComicbook;
             }
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Owner.Show();
+            this.Close();
         }
     }
 }
