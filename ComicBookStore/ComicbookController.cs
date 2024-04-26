@@ -280,6 +280,17 @@ namespace ComicBookStore
             }
         }
 
+        public void AddComicToCustomer(Comicbook comicbook, Customer customer)
+        {
+            strSQL = $"SELECT COUNT(*) FROM CustomerCollection WHERE ComicUPC = {comicbook.UPC} AND CustomerUsername = '{customer.Username}'";
+            int count = (int)comicDatabase.ExecuteScalar(strSQL);
+
+            if (count == 0)
+            {
+                strSQL = $"INSERT INTO CustomerCollection (ComicUPC, CustomerUsername) VALUES ({comicbook.UPC}, '{customer.Username}')";
+                comicDatabase.DatabaseInsert(strSQL);
+            }
+        }
 
     }
 }

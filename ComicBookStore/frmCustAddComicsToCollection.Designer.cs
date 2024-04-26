@@ -36,28 +36,32 @@
             // 
             // propGridComicCollection
             // 
-            this.propGridComicCollection.Location = new System.Drawing.Point(699, 42);
+            this.propGridComicCollection.Location = new System.Drawing.Point(350, 22);
+            this.propGridComicCollection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.propGridComicCollection.Name = "propGridComicCollection";
-            this.propGridComicCollection.Size = new System.Drawing.Size(336, 325);
+            this.propGridComicCollection.Size = new System.Drawing.Size(168, 169);
             this.propGridComicCollection.TabIndex = 0;
             this.propGridComicCollection.Click += new System.EventHandler(this.propGridComicCollection_Click);
             // 
             // dgvComicbookSelection
             // 
             this.dgvComicbookSelection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvComicbookSelection.Location = new System.Drawing.Point(103, 132);
+            this.dgvComicbookSelection.Location = new System.Drawing.Point(52, 69);
+            this.dgvComicbookSelection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvComicbookSelection.Name = "dgvComicbookSelection";
             this.dgvComicbookSelection.RowHeadersWidth = 82;
             this.dgvComicbookSelection.RowTemplate.Height = 33;
-            this.dgvComicbookSelection.Size = new System.Drawing.Size(487, 441);
+            this.dgvComicbookSelection.Size = new System.Drawing.Size(244, 229);
             this.dgvComicbookSelection.TabIndex = 1;
             this.dgvComicbookSelection.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComicbookSelection_CellContentClick);
+            this.dgvComicbookSelection.SelectionChanged += new System.EventHandler(this.dgvComicbookSelection_SelectionChanged);
             // 
             // btnCollection
             // 
-            this.btnCollection.Location = new System.Drawing.Point(757, 447);
+            this.btnCollection.Location = new System.Drawing.Point(378, 232);
+            this.btnCollection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCollection.Name = "btnCollection";
-            this.btnCollection.Size = new System.Drawing.Size(155, 73);
+            this.btnCollection.Size = new System.Drawing.Size(78, 38);
             this.btnCollection.TabIndex = 2;
             this.btnCollection.Text = "Add to collection";
             this.btnCollection.UseVisualStyleBackColor = true;
@@ -65,12 +69,13 @@
             // 
             // frmCustAddComicsToCollection
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1135, 709);
+            this.ClientSize = new System.Drawing.Size(568, 369);
             this.Controls.Add(this.btnCollection);
             this.Controls.Add(this.dgvComicbookSelection);
             this.Controls.Add(this.propGridComicCollection);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmCustAddComicsToCollection";
             this.Text = "frmCustAddComicsToCollection";
             this.Load += new System.EventHandler(this.frmCustAddComicsToCollection_Load);
