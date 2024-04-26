@@ -40,14 +40,16 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.chkVariant = new System.Windows.Forms.CheckBox();
             this.chkReprint = new System.Windows.Forms.CheckBox();
+            this.btnAddToText = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComics)).BeginInit();
             this.SuspendLayout();
             // 
             // btnModify
             // 
-            this.btnModify.Location = new System.Drawing.Point(670, 262);
+            this.btnModify.Location = new System.Drawing.Point(1340, 504);
+            this.btnModify.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(75, 23);
+            this.btnModify.Size = new System.Drawing.Size(150, 44);
             this.btnModify.TabIndex = 0;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -55,9 +57,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(670, 305);
+            this.btnDelete.Location = new System.Drawing.Point(1340, 587);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 35);
+            this.btnDelete.Size = new System.Drawing.Size(150, 67);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -65,68 +68,78 @@
             // 
             // txtUPC
             // 
-            this.txtUPC.Location = new System.Drawing.Point(467, 117);
+            this.txtUPC.Location = new System.Drawing.Point(879, 124);
+            this.txtUPC.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtUPC.Name = "txtUPC";
-            this.txtUPC.Size = new System.Drawing.Size(100, 20);
+            this.txtUPC.Size = new System.Drawing.Size(196, 31);
             this.txtUPC.TabIndex = 2;
             // 
             // txtIssueNo
             // 
-            this.txtIssueNo.Location = new System.Drawing.Point(467, 206);
+            this.txtIssueNo.Location = new System.Drawing.Point(879, 295);
+            this.txtIssueNo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtIssueNo.Name = "txtIssueNo";
-            this.txtIssueNo.Size = new System.Drawing.Size(100, 20);
+            this.txtIssueNo.Size = new System.Drawing.Size(196, 31);
             this.txtIssueNo.TabIndex = 3;
             // 
             // txtCoverImage
             // 
-            this.txtCoverImage.Location = new System.Drawing.Point(467, 262);
+            this.txtCoverImage.Location = new System.Drawing.Point(879, 403);
+            this.txtCoverImage.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtCoverImage.Name = "txtCoverImage";
-            this.txtCoverImage.Size = new System.Drawing.Size(100, 20);
+            this.txtCoverImage.Size = new System.Drawing.Size(196, 31);
             this.txtCoverImage.TabIndex = 4;
             // 
             // txtAuthor
             // 
-            this.txtAuthor.Location = new System.Drawing.Point(467, 320);
+            this.txtAuthor.Location = new System.Drawing.Point(879, 514);
+            this.txtAuthor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(100, 20);
+            this.txtAuthor.Size = new System.Drawing.Size(196, 31);
             this.txtAuthor.TabIndex = 5;
             // 
             // txtIllustrator
             // 
-            this.txtIllustrator.Location = new System.Drawing.Point(467, 365);
+            this.txtIllustrator.Location = new System.Drawing.Point(879, 601);
+            this.txtIllustrator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtIllustrator.Name = "txtIllustrator";
-            this.txtIllustrator.Size = new System.Drawing.Size(100, 20);
+            this.txtIllustrator.Size = new System.Drawing.Size(196, 31);
             this.txtIllustrator.TabIndex = 6;
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(467, 162);
+            this.txtTitle.Location = new System.Drawing.Point(879, 211);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(100, 20);
+            this.txtTitle.Size = new System.Drawing.Size(196, 31);
             this.txtTitle.TabIndex = 7;
             // 
             // dgvComics
             // 
             this.dgvComics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvComics.Location = new System.Drawing.Point(102, 52);
+            this.dgvComics.Location = new System.Drawing.Point(204, 100);
+            this.dgvComics.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dgvComics.Name = "dgvComics";
-            this.dgvComics.Size = new System.Drawing.Size(240, 318);
+            this.dgvComics.RowHeadersWidth = 82;
+            this.dgvComics.Size = new System.Drawing.Size(480, 612);
             this.dgvComics.TabIndex = 8;
             this.dgvComics.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComics_CellContentClick);
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(467, 418);
+            this.txtPrice.Location = new System.Drawing.Point(879, 703);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(100, 20);
+            this.txtPrice.Size = new System.Drawing.Size(196, 31);
             this.txtPrice.TabIndex = 9;
             // 
             // chkVariant
             // 
             this.chkVariant.AutoSize = true;
-            this.chkVariant.Location = new System.Drawing.Point(602, 119);
+            this.chkVariant.Location = new System.Drawing.Point(1204, 229);
+            this.chkVariant.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.chkVariant.Name = "chkVariant";
-            this.chkVariant.Size = new System.Drawing.Size(90, 17);
+            this.chkVariant.Size = new System.Drawing.Size(175, 29);
             this.chkVariant.TabIndex = 10;
             this.chkVariant.Text = "Variant Cover";
             this.chkVariant.UseVisualStyleBackColor = true;
@@ -134,18 +147,31 @@
             // chkReprint
             // 
             this.chkReprint.AutoSize = true;
-            this.chkReprint.Location = new System.Drawing.Point(602, 151);
+            this.chkReprint.Location = new System.Drawing.Point(1204, 290);
+            this.chkReprint.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.chkReprint.Name = "chkReprint";
-            this.chkReprint.Size = new System.Drawing.Size(60, 17);
+            this.chkReprint.Size = new System.Drawing.Size(113, 29);
             this.chkReprint.TabIndex = 11;
             this.chkReprint.Text = "Reprint";
             this.chkReprint.UseVisualStyleBackColor = true;
             // 
+            // btnAddToText
+            // 
+            this.btnAddToText.Location = new System.Drawing.Point(1328, 403);
+            this.btnAddToText.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAddToText.Name = "btnAddToText";
+            this.btnAddToText.Size = new System.Drawing.Size(150, 44);
+            this.btnAddToText.TabIndex = 12;
+            this.btnAddToText.Text = "Add text to textbox";
+            this.btnAddToText.UseVisualStyleBackColor = true;
+            this.btnAddToText.Click += new System.EventHandler(this.btnAddToText_Click);
+            // 
             // frmModifyComics
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1600, 865);
+            this.Controls.Add(this.btnAddToText);
             this.Controls.Add(this.chkReprint);
             this.Controls.Add(this.chkVariant);
             this.Controls.Add(this.txtPrice);
@@ -158,6 +184,7 @@
             this.Controls.Add(this.txtUPC);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModify);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmModifyComics";
             this.Text = "frmModifyComics";
             this.Load += new System.EventHandler(this.frmModifyComics_Load);
@@ -181,5 +208,6 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.CheckBox chkVariant;
         private System.Windows.Forms.CheckBox chkReprint;
+        private System.Windows.Forms.Button btnAddToText;
     }
 }

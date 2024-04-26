@@ -34,10 +34,11 @@
             // 
             // btnModifyComics
             // 
-            this.btnModifyComics.Location = new System.Drawing.Point(363, 214);
+            this.btnModifyComics.Location = new System.Drawing.Point(739, 231);
+            this.btnModifyComics.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnModifyComics.Name = "btnModifyComics";
             this.btnModifyComics.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnModifyComics.Size = new System.Drawing.Size(94, 53);
+            this.btnModifyComics.Size = new System.Drawing.Size(188, 102);
             this.btnModifyComics.TabIndex = 2;
             this.btnModifyComics.Text = "Modify / Delete Comics";
             this.btnModifyComics.UseVisualStyleBackColor = true;
@@ -45,10 +46,11 @@
             // 
             // btnEnterComics
             // 
-            this.btnEnterComics.Location = new System.Drawing.Point(190, 120);
+            this.btnEnterComics.Location = new System.Drawing.Point(380, 231);
+            this.btnEnterComics.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnEnterComics.Name = "btnEnterComics";
             this.btnEnterComics.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnEnterComics.Size = new System.Drawing.Size(94, 53);
+            this.btnEnterComics.Size = new System.Drawing.Size(188, 102);
             this.btnEnterComics.TabIndex = 3;
             this.btnEnterComics.Text = "Enter new Comics";
             this.btnEnterComics.UseVisualStyleBackColor = true;
@@ -56,11 +58,12 @@
             // 
             // frmEmpMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1600, 865);
             this.Controls.Add(this.btnEnterComics);
             this.Controls.Add(this.btnModifyComics);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmEmpMenu";
             this.Text = "frmEmpMenu";
             this.ResumeLayout(false);
