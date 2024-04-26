@@ -38,6 +38,8 @@
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.dgvComics = new System.Windows.Forms.DataGridView();
             this.txtPrice = new System.Windows.Forms.TextBox();
+            this.chkVariant = new System.Windows.Forms.CheckBox();
+            this.chkReprint = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComics)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,11 +121,33 @@
             this.txtPrice.Size = new System.Drawing.Size(100, 20);
             this.txtPrice.TabIndex = 9;
             // 
+            // chkVariant
+            // 
+            this.chkVariant.AutoSize = true;
+            this.chkVariant.Location = new System.Drawing.Point(602, 119);
+            this.chkVariant.Name = "chkVariant";
+            this.chkVariant.Size = new System.Drawing.Size(90, 17);
+            this.chkVariant.TabIndex = 10;
+            this.chkVariant.Text = "Variant Cover";
+            this.chkVariant.UseVisualStyleBackColor = true;
+            // 
+            // chkReprint
+            // 
+            this.chkReprint.AutoSize = true;
+            this.chkReprint.Location = new System.Drawing.Point(602, 151);
+            this.chkReprint.Name = "chkReprint";
+            this.chkReprint.Size = new System.Drawing.Size(60, 17);
+            this.chkReprint.TabIndex = 11;
+            this.chkReprint.Text = "Reprint";
+            this.chkReprint.UseVisualStyleBackColor = true;
+            // 
             // frmModifyComics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chkReprint);
+            this.Controls.Add(this.chkVariant);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.dgvComics);
             this.Controls.Add(this.txtTitle);
@@ -155,5 +179,7 @@
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.DataGridView dgvComics;
         private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.CheckBox chkVariant;
+        private System.Windows.Forms.CheckBox chkReprint;
     }
 }

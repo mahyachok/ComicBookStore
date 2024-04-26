@@ -219,5 +219,13 @@ namespace ComicBookStore
             }
         }
 
+        public bool ComicExists(int upc)
+        {
+            string strSQL = $"SELECT COUNT(*) FROM ComicCollection WHERE UPC = {upc}";
+
+            int count = (int)comicDatabase.ExecuteScalar(strSQL);
+
+            return count > 0;
+        }
     }
 }
