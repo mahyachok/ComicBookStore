@@ -30,7 +30,6 @@
         {
             this.btnModifyComics = new System.Windows.Forms.Button();
             this.btnEnterComics = new System.Windows.Forms.Button();
-            this.btnDeleteComics = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnModifyComics
@@ -40,7 +39,7 @@
             this.btnModifyComics.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnModifyComics.Size = new System.Drawing.Size(94, 53);
             this.btnModifyComics.TabIndex = 2;
-            this.btnModifyComics.Text = "Modify Comics";
+            this.btnModifyComics.Text = "Modify / Delete Comics";
             this.btnModifyComics.UseVisualStyleBackColor = true;
             this.btnModifyComics.Click += new System.EventHandler(this.btnModifyComics_Click);
             // 
@@ -55,22 +54,11 @@
             this.btnEnterComics.UseVisualStyleBackColor = true;
             this.btnEnterComics.Click += new System.EventHandler(this.btnEnterComics_Click);
             // 
-            // btnDeleteComics
-            // 
-            this.btnDeleteComics.Location = new System.Drawing.Point(520, 157);
-            this.btnDeleteComics.Name = "btnDeleteComics";
-            this.btnDeleteComics.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnDeleteComics.Size = new System.Drawing.Size(94, 53);
-            this.btnDeleteComics.TabIndex = 4;
-            this.btnDeleteComics.Text = "Delete Comics";
-            this.btnDeleteComics.UseVisualStyleBackColor = true;
-            // 
             // frmEmpMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnDeleteComics);
             this.Controls.Add(this.btnEnterComics);
             this.Controls.Add(this.btnModifyComics);
             this.Name = "frmEmpMenu";
@@ -83,6 +71,5 @@
 
         private System.Windows.Forms.Button btnModifyComics;
         private System.Windows.Forms.Button btnEnterComics;
-        private System.Windows.Forms.Button btnDeleteComics;
     }
 }

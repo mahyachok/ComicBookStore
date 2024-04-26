@@ -45,6 +45,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblUrl = new System.Windows.Forms.Label();
             this.txtCoverImage = new System.Windows.Forms.TextBox();
+            this.picboxCover = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxCover)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTitle
@@ -198,12 +200,22 @@
             this.txtCoverImage.Name = "txtCoverImage";
             this.txtCoverImage.Size = new System.Drawing.Size(100, 20);
             this.txtCoverImage.TabIndex = 15;
+            this.txtCoverImage.TextChanged += new System.EventHandler(this.txtCoverImage_TextChanged);
+            // 
+            // picboxCover
+            // 
+            this.picboxCover.Location = new System.Drawing.Point(298, 70);
+            this.picboxCover.Name = "picboxCover";
+            this.picboxCover.Size = new System.Drawing.Size(148, 180);
+            this.picboxCover.TabIndex = 16;
+            this.picboxCover.TabStop = false;
             // 
             // frmComicEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 340);
+            this.Controls.Add(this.picboxCover);
             this.Controls.Add(this.txtCoverImage);
             this.Controls.Add(this.lblUrl);
             this.Controls.Add(this.btnAdd);
@@ -224,6 +236,7 @@
             this.Name = "frmComicEntry";
             this.Text = "frmComicEntry";
             this.Load += new System.EventHandler(this.frmComicEntry_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picboxCover)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,5 +261,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblUrl;
         private System.Windows.Forms.TextBox txtCoverImage;
+        private System.Windows.Forms.PictureBox picboxCover;
     }
 }
