@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.imgLstCovers = new System.Windows.Forms.ImageList(this.components);
+            this.dgvCovers = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCovers)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(178, 138);
+            this.btnBrowse.Location = new System.Drawing.Point(176, 76);
             this.btnBrowse.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(162, 70);
@@ -47,7 +51,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(178, 230);
+            this.btnLogin.Location = new System.Drawing.Point(176, 168);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(162, 70);
@@ -58,7 +62,7 @@
             // 
             // btnModify
             // 
-            this.btnModify.Location = new System.Drawing.Point(356, 230);
+            this.btnModify.Location = new System.Drawing.Point(354, 168);
             this.btnModify.Margin = new System.Windows.Forms.Padding(2);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(162, 70);
@@ -69,7 +73,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(356, 138);
+            this.btnAdd.Location = new System.Drawing.Point(354, 76);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(162, 70);
@@ -78,11 +82,26 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // imgLstCovers
+            // 
+            this.imgLstCovers.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imgLstCovers.ImageSize = new System.Drawing.Size(16, 16);
+            this.imgLstCovers.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // dgvCovers
+            // 
+            this.dgvCovers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCovers.Location = new System.Drawing.Point(136, 265);
+            this.dgvCovers.Name = "dgvCovers";
+            this.dgvCovers.Size = new System.Drawing.Size(461, 150);
+            this.dgvCovers.TabIndex = 5;
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 475);
+            this.Controls.Add(this.dgvCovers);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnLogin);
@@ -91,6 +110,7 @@
             this.Name = "FrmMenu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.FrmMenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCovers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -101,6 +121,8 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.ImageList imgLstCovers;
+        private System.Windows.Forms.DataGridView dgvCovers;
     }
 }
 

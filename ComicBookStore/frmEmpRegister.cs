@@ -29,17 +29,20 @@ namespace ComicBookStore
                 return;
             }
 
-            if(!double.TryParse(txtSalary.Text, out double salary))
+            else if(!double.TryParse(txtSalary.Text, out double salary))
             {
                 MessageBox.Show("Please enter a valid salary");
                 return;
             }
 
+            else
+            {
+                Employee newEmployee = controller.MakeEmployee(txtUser.Text, txtPass.Text, txtName.Text, double.Parse(txtSalary.Text) ,txtStore.Text,txtAddress.Text);
+                controller.AddEmployeeToDatabase(newEmployee);
+                MessageBox.Show("Account succesfully created.");
+            }
 
-
-
-            Employee newEmployee = controller.MakeEmployee(txtUser.Text, txtPass.Text, txtName.Text, double.Parse(txtSalary.Text) ,txtStore.Text,txtAddress.Text);
-            controller.AddEmployeeToDatabase(newEmployee);
+            
         }
 
         private void frmEmpRegister_Load(object sender, EventArgs e)
