@@ -43,9 +43,9 @@ namespace ComicBookStore
             return newEmployee;
         }
 
-        public Comicbook MakeComicbook(string UPC, string seriesTitle, int issueNumber, string coverImage, string author, string illustrator, double price, bool variantCover, bool reprint)
+        public Comicbook MakeComicbook(int UPC, string seriesTitle, int issueNumber, string coverImage, string author, string illustrator, double price, bool variantCover, bool reprint)
         {
-            Comicbook newComicbook = new Comicbook(UPC, seriesTitle, issueNumber, coverImage, author, illustrator, price, variantCover, reprint);
+            Comicbook newComicbook = new Comicbook(seriesTitle, UPC, issueNumber, coverImage, author, illustrator, price, variantCover, reprint);
             return newComicbook;
         }
 
@@ -158,7 +158,7 @@ namespace ComicBookStore
 
             foreach (DataRow row in dataTable.Rows)
             {
-                string comicUPC = row["ComicUPC"].ToString();
+                int comicUPC = Convert.ToInt32(row["ComicUPC"]);
                 int quantity = Convert.ToInt32(row["Quantity"]);
 
                 Comicbook comicbook = GetComicByUPC(comicUPC);
@@ -172,7 +172,7 @@ namespace ComicBookStore
             return purchasedComics;
         }
 
-        public Comicbook GetComicByUPC(string upc)
+        public Comicbook GetComicByUPC(int upc)
         {
             string strSQL = $"SELECT * FROM ComicCollection WHERE UPC = '{upc}'";
 

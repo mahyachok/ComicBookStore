@@ -30,12 +30,10 @@ namespace ComicBookStore
 
         private void frmCustComicDisplay_Load(object sender, EventArgs e)
         {
+            // Get the purchased comics by the logged-in customer
+            List<Comicbook> purchasedComics = controller.GetPurchasedComicsByCustomer(loggedInCustomer.Username);
 
-
-            //string str = $"SELECT * FROM Comicbook WHERE CustomerUsername = '{custUsername}'";
-            DataTable dataTable = controller.DisplayComics();
-
-            foreach (DataRow row in dataTable.Rows)
+            foreach (Comicbook comic in purchasedComics)
             {
                 UserControl comicItem = new UserControl();
                 comicItem.Padding = new Padding(5);
@@ -46,19 +44,20 @@ namespace ComicBookStore
                 tableLayoutPanel.AutoSize = true;
                 tableLayoutPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
 
-                tableLayoutPanel.Controls.Add(CreateLabel("UPC: " + row["UPC"].ToString()));
-                tableLayoutPanel.Controls.Add(CreateLabel("Title: " + row["Title"].ToString()));
-                tableLayoutPanel.Controls.Add(CreateLabel("Issue No: " + row["IssueNo"].ToString()));
-                tableLayoutPanel.Controls.Add(CreateLabel("Author: " + row["Author"].ToString()));
-                tableLayoutPanel.Controls.Add(CreateLabel("Illustrator: " + row["Illustrator"].ToString()));
-                tableLayoutPanel.Controls.Add(CreateLabel("Price: " + row["Price"].ToString()));
+                // Display the comic details
+                tableLayoutPanel.Controls.Add(CreateLabel("UPC: " + comic.UPC));
+                tableLayoutPanel.Controls.Add(CreateLabel("Title: " + comic.SeriesTitle));
+                tableLayoutPanel.Controls.Add(CreateLabel("Issue No: " + comic.IssueNumber));
+                tableLayoutPanel.Controls.Add(CreateLabel("Author: " + comic.Author));
+                tableLayoutPanel.Controls.Add(CreateLabel("Illustrator: " + comic.Illustrator));
+                tableLayoutPanel.Controls.Add(CreateLabel("Price: " + comic.Price));
 
                 comicItem.Controls.Add(tableLayoutPanel);
 
                 flowLayoutPanel.Controls.Add(comicItem);
             }
-
         }
+
 
         private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
         {

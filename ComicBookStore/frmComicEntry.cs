@@ -78,7 +78,7 @@ namespace ComicBookStore
 
 
 
-            controller.AddComicToDatabase(controller.MakeComicbook(txtUPC.Text, txtTitle.Text, int.Parse(txtIssue.Text), txtCoverImage.Text, txtAuthor.Text, txtArtist.Text, int.Parse(cmbPrice.Text), variant, reprint));
+            controller.AddComicToDatabase(controller.MakeComicbook(Convert.ToInt32(txtUPC.Text), txtTitle.Text, Convert.ToInt32(txtIssue.Text), txtCoverImage.Text, txtAuthor.Text, txtArtist.Text, Convert.ToDouble(cmbPrice.Text), variant, reprint));
 
 
 
