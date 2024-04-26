@@ -28,7 +28,7 @@ namespace ComicBookStore
 
         private void btnEnterComics_Click(object sender, EventArgs e)
         {
-            frmComicEntry comicEntry = new frmComicEntry();
+            frmComicEntry comicEntry = new frmComicEntry(loggedInEmployee);
             comicEntry.ShowDialog();
 
         }

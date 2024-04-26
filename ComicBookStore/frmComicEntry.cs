@@ -14,11 +14,13 @@ namespace ComicBookStore
     {
 
         private ComicbookController controller;
-        public frmComicEntry()
+        Employee loggedInEmployee;
+        internal frmComicEntry(Employee employee)
         {
             InitializeComponent();
 
             controller = new ComicbookController();
+            loggedInEmployee = employee;
            
         }
 
@@ -75,11 +77,11 @@ namespace ComicBookStore
 
 
 
+            Comicbook newComicbook = controller.MakeComicbook(Convert.ToInt32(txtUPC.Text), txtTitle.Text, Convert.ToInt32(txtIssue.Text), txtCoverImage.Text, txtAuthor.Text, txtArtist.Text, Convert.ToDouble(cmbPrice.Text), variant, reprint);
 
 
-
-            controller.AddComicToDatabase(controller.MakeComicbook(Convert.ToInt32(txtUPC.Text), txtTitle.Text, Convert.ToInt32(txtIssue.Text), txtCoverImage.Text, txtAuthor.Text, txtArtist.Text, Convert.ToDouble(cmbPrice.Text), variant, reprint));
-
+            controller.AddComicToDatabase(newComicbook);
+            controller.AddComicToStore(newComicbook, loggedInEmployee);
 
 
             MessageBox.Show("Comicbook added to database");
