@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,8 @@ namespace ComicBookStore
     public partial class frmModifyComics : Form
     {
         private ComicbookController controller;
+        private Comicbook selectedComicbook;
+
 
         public frmModifyComics()
         {
@@ -31,7 +34,7 @@ namespace ComicBookStore
         }
 
         private void btnModify_Click(object sender, EventArgs e)
-        {
+        {/*
             bool variant = false;
             bool reprint = false;
 
@@ -58,15 +61,42 @@ namespace ComicBookStore
                 reprint = true;
             }
 
+            
+
             Comicbook modifiedComic = new Comicbook(txtTitle.Text, upc, int.Parse(txtIssueNo.Text), txtCoverImage.Text, txtAuthor.Text, txtIllustrator.Text, double.Parse(txtPrice.Text), variant, reprint);
             controller.ModifyComicBook(modifiedComic);
+
+            */
+
+
+
+
+
 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-           // controller.DeleteComicFromDatabase(selectedComicbook); 
-           // need to make logic to retrieve selected row as comicbook object
+          
+
+            if(dgvComics.SelectedRows.Count > 0)
+            {
+                int selectedRowIndex = dgvComics.SelectedRows[0].Index;
+                DataGridViewRow selectedRow = dgvComics.Rows[selectedRowIndex];
+
+                int upc = int.Parse(selectedRow.Cells["UPC"].Value.ToString());
+
+                selectedComicbook =controller.GetComicByUPC(upc);
+
+                controller.DeleteComicFromDatabase(selectedComicbook);
+                dgvComics.DataSource = controller.DisplayComics();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to delete");
+            }
+
+
 
         }
 
@@ -76,6 +106,8 @@ namespace ComicBookStore
             {
                 DataGridViewRow row = dgvComics.Rows[e.RowIndex];
 
+
+
                 string upc = row.Cells["UPC"].Value.ToString();
                 string title = row.Cells["Title"].Value.ToString();
                 string issueNo = row.Cells["IssueNo"].Value.ToString();
@@ -84,15 +116,41 @@ namespace ComicBookStore
                 string illustrator = row.Cells["Illustrator"].Value.ToString();
                 string price = row.Cells["Price"].Value.ToString();
 
-                txtUPC.Text = upc;
-                txtTitle.Text = title;
-                txtIssueNo.Text = issueNo;
-                txtCoverImage.Text = coverImage;
-                txtAuthor.Text = author;
-                txtIllustrator.Text = illustrator;
-                txtPrice.Text = price;
+
+                /*
+                selectedComicbook.UPC = int.Parse(upc);
+                selectedComicbook.SeriesTitle = title;
+                selectedComicbook.IssueNumber = int.Parse(issueNo);
+                selectedComicbook.CoverImage = coverImage;
+                selectedComicbook.Author = author;
+                selectedComicbook.Illustrator = illustrator;
+                selectedComicbook.Price = double.Parse(price);
+                */
+
+
+
+
+
+
+
             }
         }
 
+        private void btnAddToText_Click(object sender, EventArgs e)
+        {
+
+            /*
+            txtUPC.Text = selectedComicbook.UPC.ToString();
+            txtTitle.Text = selectedComicbook.SeriesTitle;
+            txtIssueNo.Text = selectedComicbook.IssueNumber.ToString();
+            txtCoverImage.Text = selectedComicbook.CoverImage;
+            txtAuthor.Text = selectedComicbook.Author;
+            txtIllustrator.Text = selectedComicbook.Illustrator;
+            txtPrice.Text = selectedComicbook.Price.ToString();
+            */
+
+
+
+        }
     }
 }
