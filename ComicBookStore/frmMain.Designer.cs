@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnBrowse = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -45,17 +44,6 @@
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(437, 272);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(92, 41);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnLogin
             // 
@@ -98,7 +86,6 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnBrowse);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMenu";
@@ -111,7 +98,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnBrowse;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Button btnAdd;

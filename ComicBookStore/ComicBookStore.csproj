@@ -53,6 +53,24 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="frmCustComicDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustComicDisplay.Designer.cs">
+      <DependentUpon>frmCustComicDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustMenu.Designer.cs">
+      <DependentUpon>frmCustMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmpMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpMenu.Designer.cs">
+      <DependentUpon>frmEmpMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmpRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,13 +107,28 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmModifyComics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModifyComics.Designer.cs">
+      <DependentUpon>frmModifyComics.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmComicDisplay.resx">
       <DependentUpon>frmComicDisplay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCustComicDisplay.resx">
+      <DependentUpon>frmCustComicDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustMenu.resx">
+      <DependentUpon>frmCustMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCustRegister.resx">
       <DependentUpon>frmCustRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpMenu.resx">
+      <DependentUpon>frmEmpMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmpRegister.resx">
       <DependentUpon>frmEmpRegister.cs</DependentUpon>
@@ -108,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModifyComics.resx">
+      <DependentUpon>frmModifyComics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

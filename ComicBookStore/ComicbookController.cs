@@ -25,9 +25,9 @@ namespace ComicBookStore
             comicDatabase = new Database();
         }
 
-        public DataTable DisplayComics()
+        public DataTable DisplayComics(string strSQL = "SELECT * FROM ComicCollection")
         {
-            strSQL = "SELECT * FROM ComicCollection";
+            
             return comicDatabase.GetDatabaseInfo(strSQL);
         }
 
@@ -43,16 +43,30 @@ namespace ComicBookStore
             return newEmployee;
         }
 
+        public Comicbook MakeComicbook(int UPC, string seriesTitle, int issueNumber, string coverImage, string author, string illustrator, double price, bool variantCover, bool reprint)
+        {
+            Comicbook newComicbook = new Comicbook(seriesTitle, UPC, issueNumber, coverImage, author, illustrator, price, variantCover, reprint);
+            return newComicbook;
+        }
+
+        public void AddComicToDatabase(Comicbook newComicbook)
+        {
+            strSQL = $"INSERT INTO ComicCollection (UPC, Title, IssueNo, CoverImage, Author, Illustrator, Price, VariantCover, Reprint) VALUES ('{newComicbook.UPC}', '{newComicbook.SeriesTitle}', {newComicbook.IssueNumber}, '{newComicbook.CoverImage}', '{newComicbook.Author}', '{newComicbook.Illustrator}', {newComicbook.Price}, {newComicbook.VariantCover}, {newComicbook.Reprint})";
+            comicDatabase.DatabaseInsert(strSQL);
+        }
+
+
+
 
         public void AddCustomerToDatabase(Customer newCustomer)
         {
-            strSQL = $"INSERT INTO CustomersLogin (CustomerUsername, CustomerPassword) VALUES ('{newCustomer.Username}', {newCustomer.Password})";
+            strSQL = $"INSERT INTO CustomersLogin (CustomerUsername, CustomerPassword, CustomerName) VALUES ('{newCustomer.Username}', {newCustomer.Password}), '{newCustomer.Name}'";
             comicDatabase.DatabaseInsert(strSQL);
         }
 
         public void AddEmployeeToDatabase(Employee newEmployee)
         {
-            strSQL = $"INSERT INTO EmployeeLogin (EmployeeUsername, EmployeePassword) VALUES ('{newEmployee.Username}', {newEmployee.Password})";
+            strSQL = $"INSERT INTO EmployeeLogin (EmployeeUsername, EmployeePassword, EmployeeName, Salary, StoreName, Address) VALUES ('{newEmployee.Username}', {newEmployee.Password}, {newEmployee.Salary}, {newEmployee.StoreName}, {newEmployee.Address})";
             comicDatabase.DatabaseInsert(strSQL);
         }
 
@@ -119,6 +133,95 @@ namespace ComicBookStore
         public bool ValidateCustomerLogin(string username, string password)
         {
             string strSQL = $"SELECT COUNT(*) FROM CustomersLogin WHERE CustomerUsername = '{username}' AND CustomerPassword = '{password}'";
+
+            int count = (int)comicDatabase.ExecuteScalar(strSQL);
+
+            return count > 0;
+        }
+
+        public bool ValidateEmployeeLogin(string username, string password)
+        {
+            string strSQL = $"SELECT COUNT(*) FROM EmployeeLogin WHERE EmployeeUsername = '{username}' AND EmployeePassword = '{password}'";
+
+            int count = (int)comicDatabase.ExecuteScalar(strSQL);
+
+            return count > 0;
+        }
+
+        public List<Comicbook> GetPurchasedComicsByCustomer(string customerUsername)
+        {
+            List<Comicbook> purchasedComics = new List<Comicbook>();
+
+            strSQL = $"SELECT * FROM CustomerCollection WHERE CustomerUsername = '{customerUsername}'";
+
+            DataTable dataTable = comicDatabase.GetDatabaseInfo(strSQL);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                int comicUPC = Convert.ToInt32(row["ComicUPC"]);
+                int quantity = Convert.ToInt32(row["Quantity"]);
+
+                Comicbook comicbook = GetComicByUPC(comicUPC);
+
+                if (comicbook != null)
+                {
+                    purchasedComics.Add(comicbook);
+                }
+            }
+
+            return purchasedComics;
+        }
+
+        public Comicbook GetComicByUPC(int upc)
+        {
+            string strSQL = $"SELECT * FROM ComicCollection WHERE UPC = '{upc}'";
+
+            DataTable dataTable = comicDatabase.GetDatabaseInfo(strSQL);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                DataRow row = dataTable.Rows[0];
+
+                string title = row["Title"].ToString();
+                int issueNumber = Convert.ToInt32(row["IssueNo"]);
+                string coverImage = row["CoverImage"].ToString();
+                string author = row["Author"].ToString();
+                string illustrator = row["Illustrator"].ToString();
+                double price = Convert.ToDouble(row["Price"]);
+                bool variant = Convert.ToBoolean(row["VariantCover"]);
+                bool reprint = Convert.ToBoolean(row["Reprint"]);
+
+                return new Comicbook(title, upc, issueNumber, coverImage, author, illustrator, price, variant, reprint);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public Customer GetCustomerByUsername(string username)
+        {
+            strSQL = $"SELECT * FROM CustomersLogin WHERE CustomerUsername = '{username}'";
+
+            DataTable dataTable = comicDatabase.GetDatabaseInfo(strSQL);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                DataRow row = dataTable.Rows[0];
+                string password = row["CustomerPassword"].ToString();
+                string name = row["Name"].ToString();
+
+                return new Customer(username, password, name);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public bool ComicExists(int upc)
+        {
+            string strSQL = $"SELECT COUNT(*) FROM ComicCollection WHERE UPC = {upc}";
 
             int count = (int)comicDatabase.ExecuteScalar(strSQL);
 

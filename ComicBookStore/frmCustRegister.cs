@@ -22,8 +22,21 @@ namespace ComicBookStore
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+
+            if (txtUser.Text == "" || txtPass.Text == "" || txtName.Text == "")
+            {
+                MessageBox.Show("Please fill in all fields");
+                return;
+            }
+
+
             Customer newCustomer = controller.MakeCustomer(txtUser.Text, txtPass.Text, txtName.Text);
             controller.AddCustomerToDatabase(newCustomer);
+        }
+
+        private void frmCustRegister_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

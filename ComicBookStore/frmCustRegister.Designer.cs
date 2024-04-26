@@ -109,6 +109,7 @@
             this.Controls.Add(this.txtUser);
             this.Name = "frmCustRegister";
             this.Text = "frmCustRegister";
+            this.Load += new System.EventHandler(this.frmCustRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

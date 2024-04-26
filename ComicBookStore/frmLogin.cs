@@ -31,18 +31,40 @@ namespace ComicBookStore
             if(controller.ValidateCustomerLogin(txtCustUser.Text, txtCustPass.Text))
             {
 
+                Customer customer = controller.GetCustomerByUsername(txtCustUser.Text);
+                frmCustMenu customerMenu = new frmCustMenu(customer);
+                customerMenu.ShowDialog();
+
             }
             else
             {
                 MessageBox.Show("Invalid customer login.");
+                return;
+
             }
-            ;
+            
         }
 
         private void btnCreateEmp_Click(object sender, EventArgs e)
         {
             frmEmpRegister employeeRegistration = new frmEmpRegister();
             employeeRegistration.ShowDialog();
+        }
+
+        private void btnEmpLogin_Click(object sender, EventArgs e)
+        {
+
+            if (controller.ValidateEmployeeLogin(txtEmpUser.Text, txtEmpPass.Text))
+            {
+                frmEmpMenu employeeMenu = new frmEmpMenu();
+                employeeMenu.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Invalid employee login.");
+                return;
+            }
+
         }
     }
 }

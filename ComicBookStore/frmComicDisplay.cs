@@ -47,6 +47,12 @@ namespace ComicBookStore
                 tableLayoutPanel.Controls.Add(CreateLabel("Illustrator: " + row["Illustrator"].ToString()));
                 tableLayoutPanel.Controls.Add(CreateLabel("Price: " + row["Price"].ToString()));
 
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
+                pictureBox.ImageLocation = row["CoverImage"].ToString(); 
+                tableLayoutPanel.Controls.Add(pictureBox); 
+
+
                 comicItem.Controls.Add(tableLayoutPanel);
 
                 flowLayoutPanel.Controls.Add(comicItem);

@@ -42,11 +42,14 @@ namespace ComicBookStore
 
         private void btnModify_Click(object sender, EventArgs e)
         {
+            frmModifyComics frm = new frmModifyComics();
+            frm.Show();
 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            
 
         }
 

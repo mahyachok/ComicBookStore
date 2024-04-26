@@ -124,6 +124,7 @@
             this.btnEmpLogin.TabIndex = 2;
             this.btnEmpLogin.Text = "Login";
             this.btnEmpLogin.UseVisualStyleBackColor = true;
+            this.btnEmpLogin.Click += new System.EventHandler(this.btnEmpLogin_Click);
             // 
             // label2
             // 

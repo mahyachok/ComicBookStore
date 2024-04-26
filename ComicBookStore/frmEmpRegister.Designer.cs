@@ -136,6 +136,7 @@
             this.Controls.Add(this.txtStore);
             this.Controls.Add(this.txtName);
             this.Name = "frmEmpRegister";
+            this.Load += new System.EventHandler(this.frmEmpRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
