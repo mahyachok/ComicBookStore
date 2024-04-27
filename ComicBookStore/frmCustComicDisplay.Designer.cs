@@ -28,22 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
-            // 
-            // tableLayoutPanel
-            // 
-            this.tableLayoutPanel.Location = new System.Drawing.Point(205, 113);
-            this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.Size = new System.Drawing.Size(435, 304);
-            this.tableLayoutPanel.TabIndex = 0;
             // 
             // frmCustComicDisplay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tableLayoutPanel);
+            this.ClientSize = new System.Drawing.Size(1600, 865);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmCustComicDisplay";
             this.Text = "frmCustComicDisplay";
             this.Load += new System.EventHandler(this.frmCustComicDisplay_Load);
@@ -52,7 +44,5 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel tableLayoutPanel;
     }
 }

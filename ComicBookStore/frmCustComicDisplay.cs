@@ -22,10 +22,19 @@ namespace ComicBookStore
 
             controller = new ComicbookController();
             loggedInCustomer = customer;
-            
+
+
             flowLayoutPanel = new FlowLayoutPanel();
+
+            flowLayoutPanel.AutoSize = true;
+
+            flowLayoutPanel.AutoScroll = true;
+            flowLayoutPanel.FlowDirection = FlowDirection.TopDown;
+
+
             flowLayoutPanel.Dock = DockStyle.Fill;
             Controls.Add(flowLayoutPanel);
+
         }
 
         private void frmCustComicDisplay_Load(object sender, EventArgs e)
@@ -36,7 +45,7 @@ namespace ComicBookStore
             {
                 UserControl comicItem = new UserControl();
                 comicItem.Padding = new Padding(5);
-                comicItem.Width = flowLayoutPanel.ClientSize.Width - 30;
+                comicItem.Width = flowLayoutPanel.ClientSize.Width - 100;
 
                 TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
                 tableLayoutPanel.Dock = DockStyle.Fill;
@@ -51,9 +60,24 @@ namespace ComicBookStore
                 tableLayoutPanel.Controls.Add(CreateLabel("Illustrator: " + comic.Illustrator));
                 tableLayoutPanel.Controls.Add(CreateLabel("Price: " + comic.Price));
 
+                //comicItem.Controls.Add(tableLayoutPanel);
+
+                //flowLayoutPanel.Controls.Add(comicItem);
+
+
+
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox.ImageLocation = comic.CoverImage.ToString();
+                tableLayoutPanel.Controls.Add(pictureBox);
+
+
                 comicItem.Controls.Add(tableLayoutPanel);
 
                 flowLayoutPanel.Controls.Add(comicItem);
+
+
+
             }
         }
 
