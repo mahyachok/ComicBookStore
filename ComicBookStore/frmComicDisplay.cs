@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ComicBookStore
@@ -14,15 +9,22 @@ namespace ComicBookStore
     {
         private ComicbookController controller;
         private FlowLayoutPanel flowLayoutPanel;
+        private Panel panel; 
 
         public frmComicDisplay()
         {
             InitializeComponent();
             controller = new ComicbookController();
 
+            panel = new Panel();
+            panel.Dock = DockStyle.Fill;
+            Controls.Add(panel); 
+
             flowLayoutPanel = new FlowLayoutPanel();
-            flowLayoutPanel.Dock = DockStyle.Fill;
-            Controls.Add(flowLayoutPanel);
+            flowLayoutPanel.AutoSize = true; 
+            flowLayoutPanel.FlowDirection = FlowDirection.TopDown; 
+            flowLayoutPanel.AutoScroll = true; 
+            panel.Controls.Add(flowLayoutPanel); 
         }
 
         private void frmComicDisplay_Load(object sender, EventArgs e)
@@ -32,8 +34,8 @@ namespace ComicBookStore
             foreach (DataRow row in dataTable.Rows)
             {
                 UserControl comicItem = new UserControl();
-                comicItem.Padding = new Padding(5); 
-                comicItem.Width = flowLayoutPanel.ClientSize.Width - 30; 
+                comicItem.Padding = new Padding(5);
+                comicItem.Width = flowLayoutPanel.ClientSize.Width - 30;
 
                 TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
                 tableLayoutPanel.Dock = DockStyle.Fill;
@@ -48,10 +50,9 @@ namespace ComicBookStore
                 tableLayoutPanel.Controls.Add(CreateLabel("Price: " + row["Price"].ToString()));
 
                 PictureBox pictureBox = new PictureBox();
-                pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
-                pictureBox.ImageLocation = row["CoverImage"].ToString(); 
-                tableLayoutPanel.Controls.Add(pictureBox); 
-
+                pictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
+                pictureBox.ImageLocation = row["CoverImage"].ToString();
+                tableLayoutPanel.Controls.Add(pictureBox);
 
                 comicItem.Controls.Add(tableLayoutPanel);
 
