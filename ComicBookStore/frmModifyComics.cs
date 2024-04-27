@@ -16,6 +16,8 @@ namespace ComicBookStore
         private ComicbookController controller;
         private Comicbook selectedComicbook;
 
+        BindingSource myBindingSource;
+
 
         public frmModifyComics()
         {
@@ -30,6 +32,33 @@ namespace ComicBookStore
 
             dgvComics.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+
+
+
+            myBindingSource = new BindingSource();
+            myBindingSource.DataSource = controller.DisplayComics();
+          
+
+           Binding objUPCBinding = new Binding("Text", myBindingSource, "UPC");
+            txtUPC.DataBindings.Add(objUPCBinding);
+
+            Binding objTitleBinding = new Binding("Text", myBindingSource, "Title");
+            txtTitle.DataBindings.Add(objTitleBinding);
+
+            Binding objIssueNoBinding = new Binding("Text", myBindingSource, "IssueNo");
+            txtIssueNo.DataBindings.Add(objIssueNoBinding);
+
+            Binding objCoverImageBinding = new Binding("Text", myBindingSource, "CoverImage");
+            txtCoverImage.DataBindings.Add(objCoverImageBinding);
+
+            Binding objAuthorBinding = new Binding("Text", myBindingSource, "Author");
+            txtAuthor.DataBindings.Add(objAuthorBinding);
+
+            Binding objIllustratorBinding = new Binding("Text", myBindingSource, "Illustrator");
+            txtIllustrator.DataBindings.Add(objIllustratorBinding);
+
+            Binding objPriceBinding = new Binding("Text", myBindingSource, "Price");
+            txtPrice.DataBindings.Add(objPriceBinding);
 
         }
 
@@ -150,6 +179,11 @@ namespace ComicBookStore
                 txtAuthor.Text = selectedComicbook.Author;
                 txtIllustrator.Text = selectedComicbook.Illustrator;
                 txtPrice.Text = selectedComicbook.Price.ToString();
+
+
+
+
+
 
             }
         }

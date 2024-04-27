@@ -38,6 +38,7 @@
             this.dgvComics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComics.Location = new System.Drawing.Point(62, 63);
             this.dgvComics.Name = "dgvComics";
+            this.dgvComics.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvComics.Size = new System.Drawing.Size(511, 250);
             this.dgvComics.TabIndex = 0;
             // 

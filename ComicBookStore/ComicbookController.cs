@@ -79,7 +79,7 @@ namespace ComicBookStore
 
         public void DeleteComicFromDatabase(Comicbook comicbook)
         {
-            strSQL = $"DELETE FROM ComicCollection " + $"WHERE UPC = '{comicbook.UPC}'";
+            strSQL = $"DELETE FROM ComicCollection " + $"WHERE UPC = {comicbook.UPC}";
             comicDatabase.DatabaseInsert(strSQL);
         }
 

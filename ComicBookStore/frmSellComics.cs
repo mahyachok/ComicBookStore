@@ -27,7 +27,7 @@ namespace ComicBookStore
         {
             InitializeComponent();
 
-
+            dgvComics.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
 
         }
