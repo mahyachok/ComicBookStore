@@ -142,6 +142,7 @@ namespace ComicBookStore
                 selectedComicbook.Price = double.Parse(price);
 
 
+
                 txtUPC.Text = selectedComicbook.UPC.ToString();
                 txtTitle.Text = selectedComicbook.SeriesTitle;
                 txtIssueNo.Text = selectedComicbook.IssueNumber.ToString();

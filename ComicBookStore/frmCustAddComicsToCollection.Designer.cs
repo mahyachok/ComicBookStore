@@ -39,19 +39,25 @@
             // 
             // propGridComicCollection
             // 
-            this.propGridComicCollection.Location = new System.Drawing.Point(512, 54);
+            this.propGridComicCollection.CanShowVisualStyleGlyphs = false;
+            this.propGridComicCollection.Font = new System.Drawing.Font("MS Outlook", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.propGridComicCollection.Location = new System.Drawing.Point(507, 54);
             this.propGridComicCollection.Margin = new System.Windows.Forms.Padding(2);
             this.propGridComicCollection.Name = "propGridComicCollection";
+            this.propGridComicCollection.SelectedObject = this.propGridComicCollection;
             this.propGridComicCollection.Size = new System.Drawing.Size(255, 212);
             this.propGridComicCollection.TabIndex = 0;
             this.propGridComicCollection.Click += new System.EventHandler(this.propGridComicCollection_Click);
             // 
             // dgvComicbookSelection
             // 
+            this.dgvComicbookSelection.AllowUserToAddRows = false;
+            this.dgvComicbookSelection.AllowUserToDeleteRows = false;
             this.dgvComicbookSelection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComicbookSelection.Location = new System.Drawing.Point(23, 69);
             this.dgvComicbookSelection.Margin = new System.Windows.Forms.Padding(2);
             this.dgvComicbookSelection.Name = "dgvComicbookSelection";
+            this.dgvComicbookSelection.ReadOnly = true;
             this.dgvComicbookSelection.RowHeadersWidth = 82;
             this.dgvComicbookSelection.RowTemplate.Height = 33;
             this.dgvComicbookSelection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
