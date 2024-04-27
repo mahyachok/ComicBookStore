@@ -28,7 +28,7 @@ namespace ComicBookStore
 
             dgvComics.DataSource = controller.DisplayComics();
 
-            this.dgvComics.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvComics.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
 
         }

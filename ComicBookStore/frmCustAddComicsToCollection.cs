@@ -71,7 +71,7 @@ namespace ComicBookStore
                 propGridComicCollection.SelectedObject = selectedComicbook;
             }
 
-            //imgComic.ImageLocation = dgvComicbookSelection.SelectedRows[0].Cells["CoverImage"].Value.ToString();
+           // imgComic.ImageLocation = dgvComicbookSelection.SelectedRows[0].Cells["CoverImage"].Value.ToString();
 
         }
 

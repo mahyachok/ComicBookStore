@@ -35,6 +35,9 @@ namespace ComicBookStore
 
         private void btnSellComics_Click(object sender, EventArgs e)
         {
+            frmSellComics sellComicsForm = new frmSellComics(loggedInCustomer);
+            sellComicsForm.Owner = this;
+            sellComicsForm.Show();
 
         }
 
