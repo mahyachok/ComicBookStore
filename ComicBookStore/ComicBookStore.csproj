@@ -125,6 +125,12 @@
     <Compile Include="frmModifyComics.Designer.cs">
       <DependentUpon>frmModifyComics.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSellComics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSellComics.Designer.cs">
+      <DependentUpon>frmSellComics.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmComicDisplay.resx">
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmModifyComics.resx">
       <DependentUpon>frmModifyComics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSellComics.resx">
+      <DependentUpon>frmSellComics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

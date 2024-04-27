@@ -306,6 +306,16 @@ namespace ComicBookStore
                 comicDatabase.DatabaseInsert(strSQL);
             }
         }
+        public void RemoveComicFromCustomer(Comicbook comicbook, Customer customer)
+        {
+            strSQL = $"SELECT COUNT(*) FROM CustomerCollection WHERE ComicUPC = {comicbook.UPC} AND CustomerUsername = '{customer.Username}'";
+            int count = (int)comicDatabase.ExecuteScalar(strSQL);
 
+            if (count > 0)
+            {
+                strSQL = $"DELETE FROM CustomerCollection WHERE ComicUPC = {comicbook.UPC} AND CustomerUsername = '{customer.Username}'";
+                comicDatabase.DatabaseInsert(strSQL);
+            }
+        }
     }
 }
