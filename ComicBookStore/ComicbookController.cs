@@ -106,7 +106,7 @@ namespace ComicBookStore
                     $"Price = {comicbook.Price}, " +
                     $"VariantCover = {comicbook.VariantCover}, " +
                     $"Reprint = {comicbook.Reprint} " +
-                    $"WHERE UPC = '{comicbook.UPC}'";
+                    $"WHERE UPC = {comicbook.UPC}";
 
             comicDatabase.DatabaseInsert(strSQL);
         }

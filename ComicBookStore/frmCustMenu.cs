@@ -47,5 +47,11 @@ namespace ComicBookStore
             addComicsForm.Owner = this;
             addComicsForm.Show();
         }
+
+        private void frmCustMenu_Load(object sender, EventArgs e)
+        {
+            lblWelcome.Text = "Welcome, " + loggedInCustomer.Name;
+
+        }
     }
 }

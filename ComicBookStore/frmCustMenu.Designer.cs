@@ -31,6 +31,7 @@
             this.btnAddComics = new System.Windows.Forms.Button();
             this.btnSellComics = new System.Windows.Forms.Button();
             this.btnViewCollection = new System.Windows.Forms.Button();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAddComics
@@ -66,17 +67,29 @@
             this.btnViewCollection.UseVisualStyleBackColor = true;
             this.btnViewCollection.Click += new System.EventHandler(this.btnViewCollection_Click);
             // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Location = new System.Drawing.Point(396, 61);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(52, 13);
+            this.lblWelcome.TabIndex = 3;
+            this.lblWelcome.Text = "Welcome";
+            // 
             // frmCustMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnViewCollection);
             this.Controls.Add(this.btnSellComics);
             this.Controls.Add(this.btnAddComics);
             this.Name = "frmCustMenu";
             this.Text = "frmCustMenu";
+            this.Load += new System.EventHandler(this.frmCustMenu_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -85,5 +98,6 @@
         private System.Windows.Forms.Button btnAddComics;
         private System.Windows.Forms.Button btnSellComics;
         private System.Windows.Forms.Button btnViewCollection;
+        private System.Windows.Forms.Label lblWelcome;
     }
 }
