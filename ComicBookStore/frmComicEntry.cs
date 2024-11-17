@@ -13,13 +13,15 @@ namespace ComicBookStore
     public partial class frmComicEntry : Form
     {
 
-
         private ComicbookController controller;
-        public frmComicEntry()
+        Employee loggedInEmployee;
+        internal frmComicEntry(Employee employee)
         {
             InitializeComponent();
 
             controller = new ComicbookController();
+            loggedInEmployee = employee;
+           
         }
 
         private void frmComicEntry_Load(object sender, EventArgs e)
@@ -30,22 +32,57 @@ namespace ComicBookStore
 
         private void cmbPrice_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            bool variant = false;
+           
+            bool variant= false;
             bool reprint = false;
-          
-            if (chkVariant.Checked) { variant = true;  }
-            if (chkReprint.Checked) { reprint = true;}
+
+
+            if (chkVariant.Checked)
+            {
+                variant = true;
+            }
+            
+            if (chkReprint.Checked)
+            {
+                reprint = true;
+            }
+
+
+            //validation
+
+            if (txtUPC.Text == ""|| txtTitle.Text == "" || txtIssue.Text == "" || txtCoverImage.Text == "" || txtAuthor.Text == "" || txtArtist.Text == "" || cmbPrice.Text == "")
+            {
+                MessageBox.Show("Please fill in all fields");
+                return;
+            }
+
+            if (int.Parse(txtIssue.Text) < 1)
+            {
+                MessageBox.Show("Issue number must be greater than 0");
+                return;
+            }
+
+            if(int.TryParse(txtIssue.Text, out int result) == false)
+            {
+                MessageBox.Show("Issue number must be a number");
+                return;
+            }
 
 
 
-           // controller.MakeComicBook(txtTitle.Text, txtUPC.Text, int.Parse(txtIssue.Text), txtAuthor.Text, txtArtist.Text, double.Parse(cmbPrice.Text), variant, reprint);
 
-            controller.AddComicBook(controller.MakeComicBook(txtTitle.Text, txtUPC.Text, int.Parse(txtIssue.Text),txtCoverImage.Text, txtAuthor.Text, txtArtist.Text, double.Parse(cmbPrice.Text), variant, reprint));
+
+            Comicbook newComicbook = controller.MakeComicbook(Convert.ToInt32(txtUPC.Text), txtTitle.Text, Convert.ToInt32(txtIssue.Text), txtCoverImage.Text, txtAuthor.Text, txtArtist.Text, Convert.ToDouble(cmbPrice.Text), variant, reprint);
+
+
+            controller.AddComicToDatabase(newComicbook);
+            controller.AddComicToStore(newComicbook, loggedInEmployee);
+
 
             MessageBox.Show("Comicbook added to database");
           
@@ -53,8 +90,9 @@ namespace ComicBookStore
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtCoverImage_TextChanged(object sender, EventArgs e)
         {
+            picboxCover.ImageLocation = txtCoverImage.Text; 
 
         }
     }

@@ -10,7 +10,7 @@ namespace ComicBookStore
     {
 
         public string SeriesTitle { get; set; }
-        public string UPC { get; set; }
+        public int UPC { get; set; }
         public int IssueNumber { get; set; }
         public string CoverImage { get; set; }
         public string Author { get; set; }
@@ -19,7 +19,7 @@ namespace ComicBookStore
         public bool VariantCover { get; set; }
         public bool Reprint { get; set; }
 
-        public Comicbook(string seriesTitle, string upc, int issueNumber, string coverImage, string author, string illustrator, double price, bool variantCover, bool reprint)
+        public Comicbook(string seriesTitle, int upc, int issueNumber, string coverImage, string author, string illustrator, double price, bool variantCover, bool reprint)
         {
             SeriesTitle = seriesTitle;
             UPC = upc;

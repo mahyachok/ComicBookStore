@@ -42,6 +42,7 @@
             this.txtEmpUser = new System.Windows.Forms.TextBox();
             this.btnCreateCust = new System.Windows.Forms.Button();
             this.btnCreateEmp = new System.Windows.Forms.Button();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.grpCust.SuspendLayout();
             this.grpEmp.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +63,7 @@
             // 
             // btnCustLogin
             // 
-            this.btnCustLogin.Location = new System.Drawing.Point(143, 176);
+            this.btnCustLogin.Location = new System.Drawing.Point(113, 176);
             this.btnCustLogin.Name = "btnCustLogin";
             this.btnCustLogin.Size = new System.Drawing.Size(75, 23);
             this.btnCustLogin.TabIndex = 2;
@@ -166,6 +167,7 @@
             this.btnCreateCust.TabIndex = 2;
             this.btnCreateCust.Text = "Create a New Account (Customer)";
             this.btnCreateCust.UseVisualStyleBackColor = true;
+            this.btnCreateCust.Click += new System.EventHandler(this.btnCreateCust_Click);
             // 
             // btnCreateEmp
             // 
@@ -175,12 +177,23 @@
             this.btnCreateEmp.TabIndex = 2;
             this.btnCreateEmp.Text = "Create a New Account (Employee)";
             this.btnCreateEmp.UseVisualStyleBackColor = true;
+            this.btnCreateEmp.Click += new System.EventHandler(this.btnCreateEmp_Click);
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Location = new System.Drawing.Point(254, 22);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(228, 13);
+            this.lblInfo.TabIndex = 3;
+            this.lblInfo.Text = "username and Password for both of them is: cp";
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.btnCreateEmp);
             this.Controls.Add(this.btnCreateCust);
             this.Controls.Add(this.grpEmp);
@@ -193,6 +206,7 @@
             this.grpEmp.ResumeLayout(false);
             this.grpEmp.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -212,5 +226,6 @@
         private System.Windows.Forms.TextBox txtEmpUser;
         private System.Windows.Forms.Button btnCreateCust;
         private System.Windows.Forms.Button btnCreateEmp;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

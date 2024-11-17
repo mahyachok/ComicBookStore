@@ -43,8 +43,10 @@
             this.lblIllustrator = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lblCoverImage = new System.Windows.Forms.Label();
+            this.lblUrl = new System.Windows.Forms.Label();
             this.txtCoverImage = new System.Windows.Forms.TextBox();
+            this.picboxCover = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxCover)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTitle
@@ -102,7 +104,7 @@
             // chkVariant
             // 
             this.chkVariant.AutoSize = true;
-            this.chkVariant.Location = new System.Drawing.Point(92, 240);
+            this.chkVariant.Location = new System.Drawing.Point(92, 227);
             this.chkVariant.Name = "chkVariant";
             this.chkVariant.Size = new System.Drawing.Size(90, 17);
             this.chkVariant.TabIndex = 6;
@@ -112,7 +114,7 @@
             // chkReprint
             // 
             this.chkReprint.AutoSize = true;
-            this.chkReprint.Location = new System.Drawing.Point(92, 263);
+            this.chkReprint.Location = new System.Drawing.Point(92, 250);
             this.chkReprint.Name = "chkReprint";
             this.chkReprint.Size = new System.Drawing.Size(60, 17);
             this.chkReprint.TabIndex = 7;
@@ -175,7 +177,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(92, 286);
+            this.btnAdd.Location = new System.Drawing.Point(92, 273);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(109, 23);
             this.btnAdd.TabIndex = 13;
@@ -183,30 +185,40 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // lblCoverImage
+            // lblUrl
             // 
-            this.lblCoverImage.AutoSize = true;
-            this.lblCoverImage.Location = new System.Drawing.Point(12, 205);
-            this.lblCoverImage.Name = "lblCoverImage";
-            this.lblCoverImage.Size = new System.Drawing.Size(63, 13);
-            this.lblCoverImage.TabIndex = 15;
-            this.lblCoverImage.Text = "Cover URL:";
+            this.lblUrl.AutoSize = true;
+            this.lblUrl.Location = new System.Drawing.Point(13, 201);
+            this.lblUrl.Name = "lblUrl";
+            this.lblUrl.Size = new System.Drawing.Size(64, 13);
+            this.lblUrl.TabIndex = 14;
+            this.lblUrl.Text = "Image URL:";
             // 
             // txtCoverImage
             // 
-            this.txtCoverImage.Location = new System.Drawing.Point(92, 202);
+            this.txtCoverImage.Location = new System.Drawing.Point(92, 201);
             this.txtCoverImage.Name = "txtCoverImage";
             this.txtCoverImage.Size = new System.Drawing.Size(100, 20);
-            this.txtCoverImage.TabIndex = 16;
-            this.txtCoverImage.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtCoverImage.TabIndex = 15;
+            this.txtCoverImage.TextChanged += new System.EventHandler(this.txtCoverImage_TextChanged);
+            // 
+            // picboxCover
+            // 
+            this.picboxCover.Location = new System.Drawing.Point(298, 70);
+            this.picboxCover.Name = "picboxCover";
+            this.picboxCover.Size = new System.Drawing.Size(148, 180);
+            this.picboxCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picboxCover.TabIndex = 16;
+            this.picboxCover.TabStop = false;
             // 
             // frmComicEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(500, 340);
+            this.Controls.Add(this.picboxCover);
             this.Controls.Add(this.txtCoverImage);
-            this.Controls.Add(this.lblCoverImage);
+            this.Controls.Add(this.lblUrl);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblIllustrator);
@@ -225,6 +237,7 @@
             this.Name = "frmComicEntry";
             this.Text = "frmComicEntry";
             this.Load += new System.EventHandler(this.frmComicEntry_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picboxCover)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,7 +260,8 @@
         private System.Windows.Forms.Label lblIllustrator;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label lblCoverImage;
+        private System.Windows.Forms.Label lblUrl;
         private System.Windows.Forms.TextBox txtCoverImage;
+        private System.Windows.Forms.PictureBox picboxCover;
     }
 }
